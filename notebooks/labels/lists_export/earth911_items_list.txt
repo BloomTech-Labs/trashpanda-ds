@@ -1,0 +1,398 @@
+Antifreeze
+Auto Bodies
+Auto Parts
+Bike Tires
+Brake Fluid
+Car Batteries
+Car Fluids
+Engine Degreasers
+Gas/Oil Mixture
+Gasoline
+Hydraulic Fluid
+Innertubes
+Marine Batteries
+Motor Oil
+Motor Oil Containers
+Oil Filters
+Power Steering Fluid
+Radiators
+Road Flares
+Tires
+Transmission Fluid
+Truck Tires
+Vehicles
+Alkaline Batteries
+Button Cell Batteries
+Car Batteries
+Lead-acid Batteries - Non-automotive
+Lithium Batteries
+Lithium-ion Batteries
+Marine Batteries
+Nickel-cadmium Batteries
+Nickel-metal Hydride Batteries
+Nickel-zinc Batteries
+Silver-oxide Batteries
+Zinc-air Batteries
+Zinc-air Batteries
+Zinc-carbon Batteries
+Asphalt
+Brick
+Carpet
+Carpet Padding
+Ceiling Tiles
+Ceramic Tile
+Concrete
+Construction Debris
+Construction Materials
+Contaminated Soil
+Contaminated Wood
+Dirt
+Doors
+Gypsum Drywall
+Hardware
+Household Furniture
+Light Fixtures
+Lighting Ballasts
+Linoleum
+Lumber
+Mattresses
+Neon Lights
+Office Furniture
+Pallets
+Porcelain Products
+Roofing Materials
+Sand
+Sawdust
+Shingles
+Stone
+Tile
+Tools
+Windows
+Wood
+Wood Furnishings
+Audio Equipment
+Blu-Ray Players
+Boomboxes
+Cables
+Calculators
+Cassette Players
+Cassette Tapes
+CD Players
+CDs
+Cell Phone Accessories
+Cell Phones
+Computer Peripherals - External
+Computer Peripherals - Internal
+CRT Computer Monitors
+CRT Televisions
+Curling Irons
+Dehumidifiers
+Desktop Computers
+Digital Cameras
+DVD Players
+DVDs
+Electronic Servers
+Floppy Disks
+Game Consoles
+GPS Systems
+Hard Drives
+Home Electronics
+Hoverboards
+Humidifiers
+Inkjet Cartridges
+Laptop Computers
+LCD Computer Monitors
+LCD Televisions
+Medical Equipment - Handheld
+Medical Equipment - Large
+Microwaves
+MP3 Players
+Office Machines
+Pagers
+Paper Shredders
+Power Tools
+Printers
+Projectors
+Receivers
+Record Players
+Scanners
+Small Appliances
+Tablets
+Telephones
+Television Accessories
+Toasters
+Toner Cartridges
+Two-Way Radios
+Typewriters
+Vacuum Cleaners
+VCRs
+Video Game Cartridges
+Video Game Peripherals
+Video Tapes
+Vinyl Records
+Branches
+Brush
+Christmas Trees
+Dirt
+Grass Clippings
+Hay
+Holiday Greens
+Leaves
+Manure
+Non-Organic Food Waste
+Organic Food Waste
+Stumps
+Weeds
+Wood
+Wood Chips
+Yard Waste
+Blue Glass Beverage Containers
+Blue Glass Containers
+Brown Glass Beverage Containers
+Brown Glass Containers
+Clear Glass Beverage Containers
+Clear Glass Containers
+Green Glass Beverage Containers
+Green Glass Containers
+Acids
+Adhesives
+Aerosol Cans - Full
+Air Conditioners
+Ammunition
+Antifreeze
+Asbestos
+Brake Fluid
+Button Cell Batteries
+Car Batteries
+Car Fluids
+CFLs
+Chemistry Sets
+Contaminated Soil
+Contaminated Wood
+Controlled Substances
+Cooking Oil
+Engine Degreasers
+Exit Signs
+Explosives
+Fertilizers
+Fire Extinguishers
+Fluorescent Tubes
+Freezers
+Fungicides
+Gas Cylinders
+Gas/Oil Mixture
+Gasoline
+Hair Dye
+Hair Spray
+Herbicides
+HHW
+Household Cleaners
+Hydraulic Fluid
+Insecticides
+Items Containing Mercury
+Kerosene
+Lacquer
+Latex Paint
+Lead Paint Chips
+Lead-acid Batteries - Non-automotive
+Lice Shampoo
+Lighter Fluid
+Lighting Ballasts
+Lithium-ion Batteries
+Medical Equipment - Handheld
+Medical Sharps
+Medications
+Mercury Thermostats
+Motor Oil
+Nail Polish
+Nail Polish Removers
+Nickel-cadmium Batteries
+Nickel-metal Hydride Batteries
+Nickel-zinc Batteries
+Oil Filters
+Oil-Based Paint
+Paint Strippers
+Paint Thinners
+Perfumes
+Pesticides
+Photographic Chemicals
+Pool Chemicals
+Power Steering Fluid
+Propane Tanks
+Refrigerators
+Road Flares
+Sealers
+Silver-oxide Batteries
+Smoke Detectors
+Solvents
+Transmission Fluid
+Varnish
+Wood Stains
+X-rays
+Adult Toys
+Arts and Crafts Supplies
+Baby Products
+Barbeque Grills
+Bicycles
+Bike Tires
+Candy Wrappers
+Carpet
+Carpet Padding
+CD Cases
+Chemistry Sets
+Chip Bags
+Cigarettes
+Clothing
+Controlled Substances
+Cooking Oil
+Cookware
+Corks
+Crayons
+Drink Pouches
+Eyeglasses
+Fabric
+Flip-Flops
+Freezers
+Garden Tools
+Gift Bags
+Glue Sticks
+Hair
+Hair Dye
+Hair Spray
+Halogen Bulbs
+Heaters
+Household Cleaners
+Household Furniture
+Incandescent Lightbulbs
+Kerosene
+Latex Foam Pillows
+Lice Shampoo
+Lighter Fluid
+Linens
+Mattresses
+Metal Clothes Hangers
+Musical Instruments - Metal
+Musical Instruments - Non-metal
+Nail Polish
+Non-Organic Food Waste
+Office Supplies
+Ornaments
+Pizza Boxes
+Plastic Buckets
+Plastic Furniture
+Plastic Plant Materials
+Plastic Playsets
+Refrigerators
+Shoes
+Sporting Goods
+String Lights
+Surfboards
+Synthetic Cork
+Tennis Balls
+Toothbrushes
+Toothpaste Tubes
+Toys
+Trophies
+Washer/Dryers
+Yoga Mats
+Aerosol Cans - Full
+Aluminum Beverage Cans
+Aluminum Foil
+Aluminum Food Cans
+Aluminum Pie Plates
+Aluminum Trays
+Ferrous Metals
+Metal Paint Cans
+Metal Tags
+Nonferrous Metals
+Refrigerators
+Steel Cans
+Steel Lids
+Washer/Dryers
+Lacquer
+Latex Paint
+Lead Paint Chips
+Oil-Based Paint
+Paint Strippers
+Paint Thinners
+Varnish
+Wood Stains
+Corrugated Cardboard
+Drink Boxes
+Envelopes
+Magazines
+Mixed Paper
+Multi-wall Paper Bags
+Newspaper
+Office Paper
+Paper Cups
+Paper Labels
+Paper Sleeves
+Paperback Books
+Paperboard
+Phone Books
+Wet-strength Paperboard
+#1 Plastic Bags
+#1 Plastic Beverage Bottles
+#1 Plastic Clamshells
+#1 Plastic Film
+#1 Plastic Non-Beverage Bottles
+#1 Plastic Trays
+#1 Rigid Plastics
+#2 Plastic Bags
+#2 Plastic Bottles
+#2 Plastic Caps
+#2 Plastic Clamshells
+#2 Plastic Film
+#2 Plastic Jugs - Clear
+#2 Plastic Jugs - Colored
+#2 Rigid Plastics
+#3 Plastic Bags
+#3 Plastic Bottles
+#3 Plastic Film
+#3 Rigid Plastics
+#4 Flexible Plastics
+#4 Plastic Bags
+#4 Plastic Bottles
+#4 Plastic Film
+#4 Rigid Plastics
+#5 Plastic Bags
+#5 Plastic Bottles
+#5 Plastic Caps
+#5 Plastic Clamshells
+#5 Plastic Cups
+#5 Plastic Film
+#5 Rigid Plastics
+#6 Plastic - Expanded
+#6 Plastic Bags
+#6 Plastic Bottles
+#6 Plastic Clamshells - Expanded
+#6 Plastic Cups
+#6 Plastic Cups - Expanded
+#6 Plastic Film
+#6 Plastic Peanuts
+#6 Rigid Plastics
+#7 Plastic Bags
+#7 Plastic Bottles
+#7 Plastic Film
+#7 Rigid Plastics
+CD Cases
+Compostable Plastics
+Garden Tools
+Glue Sticks
+Medication Containers
+Motor Oil Containers
+Pesticide Containers
+Plastic Bottle Accessories
+Plastic Buckets
+Plastic Cards
+Plastic Egg Cartons
+Plastic Furniture
+Plastic Packing Materials
+Plastic Paint Cans
+Plastic Plant Materials
+Plastic Playsets
+Six-pack Rings
+Toothbrushes
+Tyvek Envelopes
+Water Filters

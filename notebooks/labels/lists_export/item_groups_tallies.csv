@@ -1,0 +1,362 @@
+item,category,pytrends,colin,tobias,timothy,trevor,vera
+Antifreeze,Automotive,1,1,0,0,1,1
+Auto Bodies,Automotive,0,1,0,0,0,0
+Auto Parts,Automotive,1,1,0,0,1,1
+Bike Tires,Automotive,0,1,0,1,0,0
+Brake Fluid,Automotive,0,1,0,0,1,0
+Car Batteries,Automotive,1,1,1,1,1,1
+Car Fluids,Automotive,0,1,0,0,1,0
+Engine Degreasers,Automotive,0,0,0,0,0,0
+Gas/Oil Mixture,Automotive,0,1,0,0,0,0
+Gasoline,Automotive,1,1,0,0,0,0
+Hydraulic Fluid,Automotive,0,0,0,0,0,1
+Innertubes,Automotive,0,0,0,0,0,0
+Marine Batteries,Automotive,0,0,0,1,0,1
+Motor Oil,Automotive,1,1,0,0,1,1
+Motor Oil Containers,Automotive,0,0,0,1,0,0
+Oil Filters,Automotive,1,0,1,0,0,1
+Power Steering Fluid,Automotive,0,0,0,0,0,0
+Radiators,Automotive,0,1,0,0,0,0
+Road Flares,Automotive,0,0,0,0,0,0
+Tires,Automotive,1,1,1,0,1,1
+Transmission Fluid,Automotive,1,0,0,0,0,0
+Truck Tires,Automotive,0,0,0,0,0,0
+Vehicles,Automotive,1,1,0,0,0,0
+Alkaline Batteries,Batteries,1,1,1,1,1,1
+Button Cell Batteries,Batteries,0,0,1,1,1,1
+Car Batteries,Batteries,1,1,1,1,1,1
+Lead-acid Batteries - Non-automotive,Batteries,0,0,0,0,0,1
+Lithium Batteries,Batteries,1,1,1,1,1,1
+Lithium-ion Batteries,Batteries,0,0,1,1,1,1
+Marine Batteries,Batteries,0,0,0,1,0,1
+Nickel-cadmium Batteries,Batteries,0,0,1,0,1,1
+Nickel-metal Hydride Batteries,Batteries,0,0,1,0,1,1
+Nickel-zinc Batteries,Batteries,0,0,1,0,1,1
+Silver-oxide Batteries,Batteries,0,0,1,0,0,0
+Zinc-air Batteries,Batteries,0,0,1,0,0,0
+Zinc-air Batteries,Batteries,0,0,1,0,0,0
+Zinc-carbon Batteries,Batteries,0,0,1,0,0,0
+Asphalt,Construction,1,1,0,0,0,0
+Brick,Construction,1,1,1,0,0,0
+Carpet,Construction,1,1,1,1,0,0
+Carpet Padding,Construction,0,0,0,0,0,0
+Ceiling Tiles,Construction,0,0,0,0,0,0
+Ceramic Tile,Construction,0,1,0,0,0,0
+Concrete,Construction,1,1,0,0,0,0
+Construction Debris,Construction,0,0,0,0,0,0
+Construction Materials,Construction,1,0,1,0,0,0
+Contaminated Soil,Construction,0,0,0,0,0,0
+Contaminated Wood,Construction,0,0,0,0,0,0
+Dirt,Construction,1,1,0,0,0,0
+Doors,Construction,1,0,0,0,0,0
+Gypsum Drywall,Construction,0,0,0,0,0,0
+Hardware,Construction,1,0,1,0,0,1
+Household Furniture,Construction,0,1,1,0,1,1
+Light Fixtures,Construction,0,0,0,1,0,0
+Lighting Ballasts,Construction,0,0,0,0,0,0
+Linoleum,Construction,0,0,0,0,0,0
+Lumber,Construction,1,1,0,1,0,1
+Mattresses,Construction,1,1,1,0,1,1
+Neon Lights,Construction,0,0,1,0,0,0
+Office Furniture,Construction,1,1,0,0,1,1
+Pallets,Construction,1,0,1,0,0,1
+Porcelain Products,Construction,0,0,1,1,0,1
+Roofing Materials,Construction,0,0,0,0,0,0
+Sand,Construction,1,0,0,0,0,0
+Sawdust,Construction,0,0,0,0,0,0
+Shingles,Construction,0,0,0,0,0,0
+Stone,Construction,1,0,1,0,0,0
+Tile,Construction,1,0,0,0,0,0
+Tools,Construction,1,0,0,0,1,0
+Windows,Construction,1,1,1,1,0,0
+Wood,Construction,1,0,1,1,0,0
+Wood Furnishings,Construction,0,0,0,0,0,0
+Audio Equipment,Electronics,0,1,0,0,0,0
+Blu-Ray Players,Electronics,0,0,0,0,1,1
+Boomboxes,Electronics,0,0,0,1,1,1
+Cables,Electronics,1,1,1,1,1,1
+Calculators,Electronics,0,1,0,1,1,1
+Cassette Players,Electronics,0,0,0,0,1,1
+Cassette Tapes,Electronics,1,0,1,1,1,0
+CD Players,Electronics,0,0,0,0,1,1
+CDs,Electronics,1,1,1,1,1,1
+Cell Phone Accessories,Electronics,0,0,0,1,0,0
+Cell Phones,Electronics,1,1,1,1,1,1
+Computer Peripherals - External,Electronics,0,0,0,0,0,0
+Computer Peripherals - Internal,Electronics,0,0,0,0,0,0
+CRT Computer Monitors,Electronics,0,1,0,0,1,0
+CRT Televisions,Electronics,0,0,0,1,1,0
+Curling Irons,Electronics,0,0,0,0,0,0
+Dehumidifiers,Electronics,0,1,0,1,0,0
+Desktop Computers,Electronics,1,1,0,1,1,1
+Digital Cameras,Electronics,0,1,0,1,1,1
+DVD Players,Electronics,0,0,0,0,1,1
+DVDs,Electronics,1,1,0,0,1,1
+Electronic Servers,Electronics,0,0,0,0,0,1
+Floppy Disks,Electronics,1,0,1,1,1,1
+Game Consoles,Electronics,0,1,0,1,1,1
+GPS Systems,Electronics,0,0,0,0,0,0
+Hard Drives,Electronics,1,1,0,1,1,0
+Home Electronics,Electronics,0,0,1,0,1,1
+Hoverboards,Electronics,0,1,0,0,1,1
+Humidifiers,Electronics,0,0,0,0,0,0
+Inkjet Cartridges,Electronics,1,1,1,1,1,1
+Laptop Computers,Electronics,1,1,0,1,1,1
+LCD Computer Monitors,Electronics,0,0,0,1,1,0
+LCD Televisions,Electronics,0,0,0,1,1,0
+Medical Equipment - Handheld,Electronics,0,1,0,0,0,0
+Medical Equipment - Large,Electronics,0,0,0,0,0,0
+Microwaves,Electronics,1,1,0,0,1,0
+MP3 Players,Electronics,0,1,0,0,1,0
+Office Machines,Electronics,0,1,0,0,0,0
+Pagers,Electronics,0,0,0,0,0,0
+Paper Shredders,Electronics,0,0,0,0,0,0
+Power Tools,Electronics,0,0,0,1,1,0
+Printers,Electronics,1,1,0,1,1,1
+Projectors,Electronics,0,0,0,1,0,0
+Receivers,Electronics,0,0,0,0,0,0
+Record Players,Electronics,0,0,0,1,0,0
+Scanners,Electronics,0,0,0,0,0,1
+Small Appliances,Electronics,1,0,1,0,1,1
+Tablets,Electronics,1,0,0,0,1,1
+Telephones,Electronics,0,0,0,0,1,1
+Television Accessories,Electronics,0,0,0,0,0,0
+Toasters,Electronics,0,0,0,0,1,0
+Toner Cartridges,Electronics,1,0,0,1,1,1
+Two-Way Radios,Electronics,0,0,0,0,0,0
+Typewriters,Electronics,0,0,0,0,0,1
+Vacuum Cleaners,Electronics,0,1,0,0,1,1
+VCRs,Electronics,0,0,0,1,1,0
+Video Game Cartridges,Electronics,0,0,0,1,0,0
+Video Game Peripherals,Electronics,0,0,0,1,0,0
+Video Tapes,Electronics,1,0,0,1,1,0
+Vinyl Records,Electronics,0,0,0,1,0,0
+Branches,Garden,1,0,0,0,0,0
+Brush,Garden,1,0,0,1,0,0
+Christmas Trees,Garden,1,0,0,0,1,1
+Dirt,Garden,1,1,0,0,0,0
+Grass Clippings,Garden,0,0,0,0,0,0
+Hay,Garden,0,0,0,0,0,0
+Holiday Greens,Garden,0,0,0,0,0,0
+Leaves,Garden,1,0,0,0,0,0
+Manure,Garden,1,0,0,0,0,0
+Non-Organic Food Waste,Garden,0,0,0,1,0,1
+Organic Food Waste,Garden,0,0,1,1,0,1
+Stumps,Garden,0,0,0,0,0,0
+Weeds,Garden,0,0,0,1,0,0
+Wood,Garden,1,0,1,1,0,0
+Wood Chips,Garden,0,0,0,0,0,0
+Yard Waste,Garden,1,1,1,0,0,0
+Blue Glass Beverage Containers,Glass,0,1,0,1,1,1
+Blue Glass Containers,Glass,0,0,1,0,1,1
+Brown Glass Beverage Containers,Glass,0,1,0,1,1,1
+Brown Glass Containers,Glass,0,0,1,1,1,1
+Clear Glass Beverage Containers,Glass,0,0,0,0,1,1
+Clear Glass Containers,Glass,0,0,1,0,1,1
+Green Glass Beverage Containers,Glass,0,0,0,0,0,1
+Green Glass Containers,Glass,0,0,1,0,0,1
+Acids,Hazardous,1,1,0,0,0,1
+Adhesives,Hazardous,0,0,0,0,0,0
+Aerosol Cans - Full,Hazardous,1,1,1,1,1,1
+Air Conditioners,Hazardous,0,1,0,0,0,0
+Ammunition,Hazardous,0,1,1,1,1,1
+Antifreeze,Hazardous,1,1,0,0,1,1
+Asbestos,Hazardous,0,1,0,0,0,1
+Brake Fluid,Hazardous,0,1,0,0,1,0
+Button Cell Batteries,Hazardous,0,0,1,1,1,1
+Car Batteries,Hazardous,1,1,1,1,1,1
+Car Fluids,Hazardous,0,1,0,0,1,0
+CFLs,Hazardous,0,0,1,1,0,1
+Chemistry Sets,Hazardous,0,0,0,0,0,0
+Contaminated Soil,Hazardous,0,0,0,0,0,0
+Contaminated Wood,Hazardous,0,0,0,0,0,0
+Controlled Substances,Hazardous,0,0,0,0,0,0
+Cooking Oil,Hazardous,1,0,1,0,1,1
+Engine Degreasers,Hazardous,0,0,0,0,0,0
+Exit Signs,Hazardous,0,0,0,0,0,0
+Explosives,Hazardous,0,1,0,0,0,0
+Fertilizers,Hazardous,0,0,0,1,0,1
+Fire Extinguishers,Hazardous,1,1,1,1,0,1
+Fluorescent Tubes,Hazardous,1,0,1,0,1,0
+Freezers,Hazardous,0,1,0,1,1,1
+Fungicides,Hazardous,0,0,0,0,0,0
+Gas Cylinders,Hazardous,0,0,1,0,0,0
+Gas/Oil Mixture,Hazardous,0,1,0,0,0,0
+Gasoline,Hazardous,1,1,0,0,0,0
+Hair Dye,Hazardous,0,1,0,0,0,0
+Hair Spray,Hazardous,0,1,0,1,1,0
+Herbicides,Hazardous,0,0,0,1,0,1
+HHW,Hazardous,0,0,1,0,0,0
+Household Cleaners,Hazardous,0,0,0,1,1,1
+Hydraulic Fluid,Hazardous,0,0,0,0,0,1
+Insecticides,Hazardous,0,1,0,1,0,1
+Items Containing Mercury,Hazardous,0,1,0,0,0,1
+Kerosene,Hazardous,0,1,0,0,0,1
+Lacquer,Hazardous,0,0,0,0,1,1
+Latex Paint,Hazardous,1,1,0,0,0,0
+Lead Paint Chips,Hazardous,0,1,0,0,0,0
+Lead-acid Batteries - Non-automotive,Hazardous,0,0,0,0,0,1
+Lice Shampoo,Hazardous,0,0,0,0,0,0
+Lighter Fluid,Hazardous,0,1,0,0,0,0
+Lighting Ballasts,Hazardous,0,0,0,0,0,0
+Lithium-ion Batteries,Hazardous,0,0,1,1,1,1
+Medical Equipment - Handheld,Hazardous,0,1,0,0,0,0
+Medical Sharps,Hazardous,0,0,0,0,0,0
+Medications,Hazardous,1,1,1,1,1,1
+Mercury Thermostats,Hazardous,0,0,1,1,0,0
+Motor Oil,Hazardous,1,1,0,0,1,1
+Nail Polish,Hazardous,1,1,0,0,1,0
+Nail Polish Removers,Hazardous,0,0,0,0,1,0
+Nickel-cadmium Batteries,Hazardous,0,0,1,0,1,1
+Nickel-metal Hydride Batteries,Hazardous,0,0,1,0,1,1
+Nickel-zinc Batteries,Hazardous,0,0,1,0,1,1
+Oil Filters,Hazardous,1,0,1,0,0,1
+Oil-Based Paint,Hazardous,0,0,0,0,0,0
+Paint Strippers,Hazardous,0,0,0,0,0,0
+Paint Thinners,Hazardous,0,0,0,0,1,0
+Perfumes,Hazardous,0,1,0,1,1,0
+Pesticides,Hazardous,0,0,0,1,1,0
+Photographic Chemicals,Hazardous,0,1,0,0,0,1
+Pool Chemicals,Hazardous,0,1,0,0,0,0
+Power Steering Fluid,Hazardous,0,0,0,0,0,0
+Propane Tanks,Hazardous,1,1,1,1,1,1
+Refrigerators,Hazardous,1,1,0,0,1,1
+Road Flares,Hazardous,0,0,0,0,0,0
+Sealers,Hazardous,0,0,0,0,0,0
+Silver-oxide Batteries,Hazardous,0,0,1,0,0,0
+Smoke Detectors,Hazardous,1,0,0,0,1,0
+Solvents,Hazardous,0,0,0,0,0,0
+Transmission Fluid,Hazardous,1,0,0,0,0,0
+Varnish,Hazardous,0,0,0,1,0,0
+Wood Stains,Hazardous,0,0,0,0,0,0
+X-rays,Hazardous,0,1,0,0,0,1
+Adult Toys,Household,0,0,0,0,0,0
+Arts and Crafts Supplies,Household,0,1,0,0,1,1
+Baby Products,Household,0,0,0,1,0,0
+Barbeque Grills,Household,0,1,0,0,1,0
+Bicycles,Household,0,1,0,1,1,1
+Bike Tires,Household,0,1,0,1,0,0
+Candy Wrappers,Household,1,0,1,1,1,0
+Carpet,Household,1,1,1,1,0,0
+Carpet Padding,Household,0,0,0,0,0,0
+CD Cases,Household,1,0,0,0,0,0
+Chemistry Sets,Household,0,0,0,0,0,0
+Chip Bags,Household,1,0,1,1,1,0
+Cigarettes,Household,1,1,1,1,0,0
+Clothing,Household,1,0,0,1,1,1
+Controlled Substances,Household,0,0,0,0,0,0
+Cooking Oil,Household,1,0,1,0,1,1
+Cookware,Household,1,1,1,0,1,1
+Corks,Household,1,1,1,0,0,1
+Crayons,Household,1,1,1,1,1,1
+Drink Pouches,Household,0,0,0,1,1,1
+Eyeglasses,Household,1,0,1,1,1,1
+Fabric,Household,1,0,1,1,1,1
+Flip-Flops,Household,0,1,0,0,0,0
+Freezers,Household,0,1,0,1,1,1
+Garden Tools,Household,0,0,0,1,0,0
+Gift Bags,Household,1,1,0,1,0,0
+Glue Sticks,Household,0,1,0,1,0,0
+Hair,Household,1,0,1,0,0,0
+Hair Dye,Household,0,1,0,0,0,0
+Hair Spray,Household,0,1,0,1,1,0
+Halogen Bulbs,Household,1,0,1,1,1,1
+Heaters,Household,1,0,0,1,0,1
+Household Cleaners,Household,0,0,0,1,1,1
+Household Furniture,Household,0,1,1,0,1,1
+Incandescent Lightbulbs,Household,0,1,1,1,1,1
+Kerosene,Household,0,1,0,0,0,1
+Latex Foam Pillows,Household,0,0,0,0,0,0
+Lice Shampoo,Household,0,0,0,0,0,0
+Lighter Fluid,Household,0,1,0,0,0,0
+Linens,Household,0,0,0,1,0,1
+Mattresses,Household,1,1,1,0,1,1
+Metal Clothes Hangers,Household,0,0,0,1,1,0
+Musical Instruments - Metal,Household,0,0,0,0,0,0
+Musical Instruments - Non-metal,Household,0,0,0,0,0,0
+Nail Polish,Household,1,1,0,0,1,0
+Non-Organic Food Waste,Household,0,0,0,1,0,1
+Office Supplies,Household,0,0,0,1,1,1
+Ornaments,Household,0,0,0,0,0,0
+Pizza Boxes,Household,1,1,1,1,1,0
+Plastic Buckets,Household,0,0,0,0,0,0
+Plastic Furniture,Household,1,0,0,0,0,0
+Plastic Plant Materials,Household,0,0,0,0,0,0
+Plastic Playsets,Household,0,0,0,0,0,0
+Refrigerators,Household,1,1,0,0,1,1
+Shoes,Household,1,0,1,1,1,1
+Sporting Goods,Household,0,0,0,0,1,1
+String Lights,Household,0,0,0,1,0,1
+Surfboards,Household,0,0,0,0,0,0
+Synthetic Cork,Household,0,0,0,0,0,0
+Tennis Balls,Household,1,0,0,1,0,0
+Toothbrushes,Household,1,1,1,1,1,1
+Toothpaste Tubes,Household,1,0,1,1,1,1
+Toys,Household,1,0,0,0,1,1
+Trophies,Household,1,0,0,1,0,0
+Washer/Dryers,Household,0,1,0,0,1,1
+Yoga Mats,Household,0,1,0,0,0,1
+Aerosol Cans - Full,Metal,1,1,1,1,1,1
+Aluminum Beverage Cans,Metal,0,1,1,1,1,1
+Aluminum Foil,Metal,1,1,1,1,1,1
+Aluminum Food Cans,Metal,0,0,1,1,1,1
+Aluminum Pie Plates,Metal,0,0,0,1,0,1
+Aluminum Trays,Metal,0,0,1,1,0,1
+Ferrous Metals,Metal,0,0,0,1,0,1
+Metal Paint Cans,Metal,0,1,0,1,0,0
+Metal Tags,Metal,0,0,0,0,0,0
+Nonferrous Metals,Metal,0,0,0,1,0,1
+Refrigerators,Metal,1,1,0,0,1,1
+Steel Cans,Metal,1,0,1,1,0,1
+Steel Lids,Metal,0,0,0,1,0,1
+Washer/Dryers,Metal,0,1,0,0,1,1
+Lacquer,Paint,0,0,0,0,1,1
+Latex Paint,Paint,1,1,0,0,0,0
+Lead Paint Chips,Paint,0,1,0,0,0,0
+Oil-Based Paint,Paint,0,0,0,0,0,0
+Paint Strippers,Paint,0,0,0,0,0,0
+Paint Thinners,Paint,0,0,0,0,1,0
+Varnish,Paint,0,0,0,1,0,0
+Wood Stains,Paint,0,0,0,0,0,0
+Corrugated Cardboard,Paper,1,0,1,0,1,0
+Drink Boxes,Paper,0,0,0,1,1,1
+Envelopes,Paper,1,0,1,1,1,1
+Magazines,Paper,1,0,0,1,1,1
+Mixed Paper,Paper,1,1,1,1,1,1
+Multi-wall Paper Bags,Paper,0,0,1,1,0,0
+Newspaper,Paper,1,1,0,1,1,1
+Office Paper,Paper,1,0,0,0,1,0
+Paper Cups,Paper,1,0,1,1,1,1
+Paper Labels,Paper,0,0,1,0,0,0
+Paper Sleeves,Paper,0,0,0,0,0,0
+Paperback Books,Paper,1,0,0,1,1,1
+Paperboard,Paper,1,0,1,0,0,1
+Phone Books,Paper,1,0,0,0,1,0
+Wet-strength Paperboard,Paper,0,0,0,0,0,0
+#1 Plastic,Plastic,1,1,1,0,0,0
+#2 Plastic,Plastic,1,1,1,0,0,0
+#3 Plastic,Plastic,0,1,1,0,0,0
+#4 Plastic,Plastic,1,1,1,0,0,0
+#5 Plastic,Plastic,1,1,1,0,0,0
+#6 Plastic,Plastic,1,1,1,0,0,0
+#7 Plastic,Plastic,1,1,1,0,0,0
+CD Cases,Plastic,1,0,0,0,0,0
+Compostable Plastics,Plastic,0,1,1,0,0,0
+Garden Tools,Plastic,0,0,0,1,0,0
+Glue Sticks,Plastic,0,1,0,1,0,0
+Medication Containers,Plastic,0,0,1,1,1,1
+Motor Oil Containers,Plastic,0,0,0,1,0,0
+Pesticide Containers,Plastic,0,0,0,0,0,0
+Plastic Bottle Accessories,Plastic,0,0,0,0,0,0
+Plastic Buckets,Plastic,0,0,0,0,0,0
+Plastic Cards,Plastic,1,0,0,1,0,0
+Plastic Egg Cartons,Plastic,0,1,0,1,0,0
+Plastic Furniture,Plastic,1,0,0,0,0,0
+Plastic Packing Materials,Plastic,0,0,0,0,0,0
+Plastic Paint Cans,Plastic,0,0,0,0,0,0
+Plastic Plant Materials,Plastic,0,0,0,0,0,0
+Plastic Playsets,Plastic,0,0,0,0,0,0
+Six-pack Rings,Plastic,0,0,1,0,1,0
+Toothbrushes,Plastic,1,1,1,1,1,1
+Tyvek Envelopes,Plastic,0,0,0,0,0,0
+Water Filters,Plastic,1,0,1,1,0,1
