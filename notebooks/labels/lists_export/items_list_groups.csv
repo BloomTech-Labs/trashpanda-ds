@@ -1,0 +1,362 @@
+category,item
+Automotive,Antifreeze
+Automotive,Auto Bodies
+Automotive,Auto Parts
+Automotive,Bike Tires
+Automotive,Brake Fluid
+Automotive,Car Batteries
+Automotive,Car Fluids
+Automotive,Engine Degreasers
+Automotive,Gas/Oil Mixture
+Automotive,Gasoline
+Automotive,Hydraulic Fluid
+Automotive,Innertubes
+Automotive,Marine Batteries
+Automotive,Motor Oil
+Automotive,Motor Oil Containers
+Automotive,Oil Filters
+Automotive,Power Steering Fluid
+Automotive,Radiators
+Automotive,Road Flares
+Automotive,Tires
+Automotive,Transmission Fluid
+Automotive,Truck Tires
+Automotive,Vehicles
+Batteries,Alkaline Batteries
+Batteries,Button Cell Batteries
+Batteries,Car Batteries
+Batteries,Lead-acid Batteries - Non-automotive
+Batteries,Lithium Batteries
+Batteries,Lithium-ion Batteries
+Batteries,Marine Batteries
+Batteries,Nickel-cadmium Batteries
+Batteries,Nickel-metal Hydride Batteries
+Batteries,Nickel-zinc Batteries
+Batteries,Silver-oxide Batteries
+Batteries,Zinc-air Batteries
+Batteries,Zinc-air Batteries
+Batteries,Zinc-carbon Batteries
+Construction,Asphalt
+Construction,Brick
+Construction,Carpet
+Construction,Carpet Padding
+Construction,Ceiling Tiles
+Construction,Ceramic Tile
+Construction,Concrete
+Construction,Construction Debris
+Construction,Construction Materials
+Construction,Contaminated Soil
+Construction,Contaminated Wood
+Construction,Dirt
+Construction,Doors
+Construction,Gypsum Drywall
+Construction,Hardware
+Construction,Household Furniture
+Construction,Light Fixtures
+Construction,Lighting Ballasts
+Construction,Linoleum
+Construction,Lumber
+Construction,Mattresses
+Construction,Neon Lights
+Construction,Office Furniture
+Construction,Pallets
+Construction,Porcelain Products
+Construction,Roofing Materials
+Construction,Sand
+Construction,Sawdust
+Construction,Shingles
+Construction,Stone
+Construction,Tile
+Construction,Tools
+Construction,Windows
+Construction,Wood
+Construction,Wood Furnishings
+Electronics,Audio Equipment
+Electronics,Blu-Ray Players
+Electronics,Boomboxes
+Electronics,Cables
+Electronics,Calculators
+Electronics,Cassette Players
+Electronics,Cassette Tapes
+Electronics,CD Players
+Electronics,CDs
+Electronics,Cell Phone Accessories
+Electronics,Cell Phones
+Electronics,Computer Peripherals - External
+Electronics,Computer Peripherals - Internal
+Electronics,CRT Computer Monitors
+Electronics,CRT Televisions
+Electronics,Curling Irons
+Electronics,Dehumidifiers
+Electronics,Desktop Computers
+Electronics,Digital Cameras
+Electronics,DVD Players
+Electronics,DVDs
+Electronics,Electronic Servers
+Electronics,Floppy Disks
+Electronics,Game Consoles
+Electronics,GPS Systems
+Electronics,Hard Drives
+Electronics,Home Electronics
+Electronics,Hoverboards
+Electronics,Humidifiers
+Electronics,Inkjet Cartridges
+Electronics,Laptop Computers
+Electronics,LCD Computer Monitors
+Electronics,LCD Televisions
+Electronics,Medical Equipment - Handheld
+Electronics,Medical Equipment - Large
+Electronics,Microwaves
+Electronics,MP3 Players
+Electronics,Office Machines
+Electronics,Pagers
+Electronics,Paper Shredders
+Electronics,Power Tools
+Electronics,Printers
+Electronics,Projectors
+Electronics,Receivers
+Electronics,Record Players
+Electronics,Scanners
+Electronics,Small Appliances
+Electronics,Tablets
+Electronics,Telephones
+Electronics,Television Accessories
+Electronics,Toasters
+Electronics,Toner Cartridges
+Electronics,Two-Way Radios
+Electronics,Typewriters
+Electronics,Vacuum Cleaners
+Electronics,VCRs
+Electronics,Video Game Cartridges
+Electronics,Video Game Peripherals
+Electronics,Video Tapes
+Electronics,Vinyl Records
+Garden,Branches
+Garden,Brush
+Garden,Christmas Trees
+Garden,Dirt
+Garden,Grass Clippings
+Garden,Hay
+Garden,Holiday Greens
+Garden,Leaves
+Garden,Manure
+Garden,Non-Organic Food Waste
+Garden,Organic Food Waste
+Garden,Stumps
+Garden,Weeds
+Garden,Wood
+Garden,Wood Chips
+Garden,Yard Waste
+Glass,Blue Glass Beverage Containers
+Glass,Blue Glass Containers
+Glass,Brown Glass Beverage Containers
+Glass,Brown Glass Containers
+Glass,Clear Glass Beverage Containers
+Glass,Clear Glass Containers
+Glass,Green Glass Beverage Containers
+Glass,Green Glass Containers
+Hazardous,Acids
+Hazardous,Adhesives
+Hazardous,Aerosol Cans - Full
+Hazardous,Air Conditioners
+Hazardous,Ammunition
+Hazardous,Antifreeze
+Hazardous,Asbestos
+Hazardous,Brake Fluid
+Hazardous,Button Cell Batteries
+Hazardous,Car Batteries
+Hazardous,Car Fluids
+Hazardous,CFLs
+Hazardous,Chemistry Sets
+Hazardous,Contaminated Soil
+Hazardous,Contaminated Wood
+Hazardous,Controlled Substances
+Hazardous,Cooking Oil
+Hazardous,Engine Degreasers
+Hazardous,Exit Signs
+Hazardous,Explosives
+Hazardous,Fertilizers
+Hazardous,Fire Extinguishers
+Hazardous,Fluorescent Tubes
+Hazardous,Freezers
+Hazardous,Fungicides
+Hazardous,Gas Cylinders
+Hazardous,Gas/Oil Mixture
+Hazardous,Gasoline
+Hazardous,Hair Dye
+Hazardous,Hair Spray
+Hazardous,Herbicides
+Hazardous,HHW
+Hazardous,Household Cleaners
+Hazardous,Hydraulic Fluid
+Hazardous,Insecticides
+Hazardous,Items Containing Mercury
+Hazardous,Kerosene
+Hazardous,Lacquer
+Hazardous,Latex Paint
+Hazardous,Lead Paint Chips
+Hazardous,Lead-acid Batteries - Non-automotive
+Hazardous,Lice Shampoo
+Hazardous,Lighter Fluid
+Hazardous,Lighting Ballasts
+Hazardous,Lithium-ion Batteries
+Hazardous,Medical Equipment - Handheld
+Hazardous,Medical Sharps
+Hazardous,Medications
+Hazardous,Mercury Thermostats
+Hazardous,Motor Oil
+Hazardous,Nail Polish
+Hazardous,Nail Polish Removers
+Hazardous,Nickel-cadmium Batteries
+Hazardous,Nickel-metal Hydride Batteries
+Hazardous,Nickel-zinc Batteries
+Hazardous,Oil Filters
+Hazardous,Oil-Based Paint
+Hazardous,Paint Strippers
+Hazardous,Paint Thinners
+Hazardous,Perfumes
+Hazardous,Pesticides
+Hazardous,Photographic Chemicals
+Hazardous,Pool Chemicals
+Hazardous,Power Steering Fluid
+Hazardous,Propane Tanks
+Hazardous,Refrigerators
+Hazardous,Road Flares
+Hazardous,Sealers
+Hazardous,Silver-oxide Batteries
+Hazardous,Smoke Detectors
+Hazardous,Solvents
+Hazardous,Transmission Fluid
+Hazardous,Varnish
+Hazardous,Wood Stains
+Hazardous,X-rays
+Household,Adult Toys
+Household,Arts and Crafts Supplies
+Household,Baby Products
+Household,Barbeque Grills
+Household,Bicycles
+Household,Bike Tires
+Household,Candy Wrappers
+Household,Carpet
+Household,Carpet Padding
+Household,CD Cases
+Household,Chemistry Sets
+Household,Chip Bags
+Household,Cigarettes
+Household,Clothing
+Household,Controlled Substances
+Household,Cooking Oil
+Household,Cookware
+Household,Corks
+Household,Crayons
+Household,Drink Pouches
+Household,Eyeglasses
+Household,Fabric
+Household,Flip-Flops
+Household,Freezers
+Household,Garden Tools
+Household,Gift Bags
+Household,Glue Sticks
+Household,Hair
+Household,Hair Dye
+Household,Hair Spray
+Household,Halogen Bulbs
+Household,Heaters
+Household,Household Cleaners
+Household,Household Furniture
+Household,Incandescent Lightbulbs
+Household,Kerosene
+Household,Latex Foam Pillows
+Household,Lice Shampoo
+Household,Lighter Fluid
+Household,Linens
+Household,Mattresses
+Household,Metal Clothes Hangers
+Household,Musical Instruments - Metal
+Household,Musical Instruments - Non-metal
+Household,Nail Polish
+Household,Non-Organic Food Waste
+Household,Office Supplies
+Household,Ornaments
+Household,Pizza Boxes
+Household,Plastic Buckets
+Household,Plastic Furniture
+Household,Plastic Plant Materials
+Household,Plastic Playsets
+Household,Refrigerators
+Household,Shoes
+Household,Sporting Goods
+Household,String Lights
+Household,Surfboards
+Household,Synthetic Cork
+Household,Tennis Balls
+Household,Toothbrushes
+Household,Toothpaste Tubes
+Household,Toys
+Household,Trophies
+Household,Washer/Dryers
+Household,Yoga Mats
+Metal,Aerosol Cans - Full
+Metal,Aluminum Beverage Cans
+Metal,Aluminum Foil
+Metal,Aluminum Food Cans
+Metal,Aluminum Pie Plates
+Metal,Aluminum Trays
+Metal,Ferrous Metals
+Metal,Metal Paint Cans
+Metal,Metal Tags
+Metal,Nonferrous Metals
+Metal,Refrigerators
+Metal,Steel Cans
+Metal,Steel Lids
+Metal,Washer/Dryers
+Paint,Lacquer
+Paint,Latex Paint
+Paint,Lead Paint Chips
+Paint,Oil-Based Paint
+Paint,Paint Strippers
+Paint,Paint Thinners
+Paint,Varnish
+Paint,Wood Stains
+Paper,Corrugated Cardboard
+Paper,Drink Boxes
+Paper,Envelopes
+Paper,Magazines
+Paper,Mixed Paper
+Paper,Multi-wall Paper Bags
+Paper,Newspaper
+Paper,Office Paper
+Paper,Paper Cups
+Paper,Paper Labels
+Paper,Paper Sleeves
+Paper,Paperback Books
+Paper,Paperboard
+Paper,Phone Books
+Paper,Wet-strength Paperboard
+Plastic,#1 Plastic
+Plastic,#2 Plastic
+Plastic,#3 Plastic
+Plastic,#4 Plastic
+Plastic,#5 Plastic
+Plastic,#6 Plastic
+Plastic,#7 Plastic
+Plastic,CD Cases
+Plastic,Compostable Plastics
+Plastic,Garden Tools
+Plastic,Glue Sticks
+Plastic,Medication Containers
+Plastic,Motor Oil Containers
+Plastic,Pesticide Containers
+Plastic,Plastic Bottle Accessories
+Plastic,Plastic Buckets
+Plastic,Plastic Cards
+Plastic,Plastic Egg Cartons
+Plastic,Plastic Furniture
+Plastic,Plastic Packing Materials
+Plastic,Plastic Paint Cans
+Plastic,Plastic Plant Materials
+Plastic,Plastic Playsets
+Plastic,Six-pack Rings
+Plastic,Toothbrushes
+Plastic,Tyvek Envelopes
+Plastic,Water Filters
