@@ -8,13 +8,14 @@ import time
 
 def count_from_top(img):
     """ helper function for find_pixel_edges
-    if a row is all zeros, a pixel count is added
+    if a row is all zeros or "shaded", a pixel count is added
     INPUT numpy array
     OUTPUT int
     """
     pixel_count = 0
     for row in img:
-        if row.sum() == 0:
+        unique_pixel_vals = np.unique(row)
+        if 255 not in unique_pixel_vals: # ignore shading (values between 0-255)
             pixel_count += 1
         else:
             return pixel_count
