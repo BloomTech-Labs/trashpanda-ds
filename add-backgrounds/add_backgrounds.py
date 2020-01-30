@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
 TODO
-- Output all images instead of just the last one
 - Error handling if there are non-image files
-- Add multiple backgrounds
+- Add multiple backgrounds and randomize them
 - Clean up variable names
 """
 import os
+import uuid
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 
 
@@ -22,7 +22,7 @@ def append_background(infile, inbg):
         width, height = img.size
         bgwidth, bgheight = bg.size
     except:
-        print("At least one of the files are not an image.") 
+        print("At least one of the files is not an image.") 
 
     print(width, height)
     print(bgwidth, bgheight)
@@ -45,7 +45,7 @@ def append_background(infile, inbg):
         bg = bg.resize((new_bg_width, new_bg_height), Image.ANTIALIAS)
         bg.paste(img, (int((new_bg_width / 2) - (width / 2)), 0), img)
 
-    bg.save('./output/output.png',"PNG")
+    bg.save('./output/'+str(uuid.uuid4())+'.png',"PNG")
 
 # Get all original image locations in the tires folder
 images = os.listdir('tires')
