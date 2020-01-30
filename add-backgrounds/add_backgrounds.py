@@ -36,8 +36,7 @@ def append_background(infile, inbg):
         new_bg_height = int(new_bg_width * bgheight / bgwidth)
         print(new_bg_width, new_bg_height)
         bg = bg.resize((new_bg_width, new_bg_height), Image.ANTIALIAS)
-        bg.paste(img, (int((0, int((new_bg_height / 2) - (height / 2))), img)
-
+        bg.paste(img, (0, int((new_bg_height / 2) - (height / 2))), img)
     else: # Background is wider
         # Resize BG such that BG width = original image width
         new_bg_height = height
