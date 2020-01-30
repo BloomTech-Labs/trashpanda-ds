@@ -2,11 +2,11 @@
 """
 TODO
 - Error handling if there are non-image files
-- Add multiple backgrounds and randomize them
 - Clean up variable names
 """
 import os
 import uuid
+from random import randint
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 
 
@@ -56,5 +56,5 @@ bgpath = [f'./bg/{image}' for image in bg  if image != '.DS_Store']
 # Apply the background paste for all original images
 for path in paths:
     print(path)
-    append_background(path, bgpath[0])
+    append_background(path, bgpath[randint(0, len(bgpath))])
 
