@@ -12,37 +12,38 @@ def append_background(infile, inbg):
     OUTPUT: image rendered
     """
 
-    try: # Check if the files are images
+    try:  # Check if the files are images
         img = Image.open(infile).convert('RGBA')
         bg = Image.open(inbg).convert('RGBA')
         width, height = img.size
         bgWidth, bgHeight = bg.size
     except:
-        print("At least one of the files is not an image.") 
+        print("At least one of the files is not an image.")
+        return
     # Get aspect ratios of the input and background images
     aspectRatio = width / height
     bgAspectRatio = bgWidth / bgHeight
-    if (aspectRatio > bgAspectRatio): # input image is wider
+    if (aspectRatio > bgAspectRatio):  # input image is wider
         # Resize BG such that BG width = input image width
-        newBgWidth  = width
+        newBgWidth = width
         newBgHeight = int(newBgWidth * bgHeight / bgWidth)
         bg = bg.resize((newBgWidth, newBgHeight), Image.ANTIALIAS)
         # Paste input image to BG, center-aligned
         bg.paste(img, (0, int((newBgHeight / 2) - (height / 2))), img)
-    else: # background is wider
+    else:  # background is wider
         # Resize BG such that BG width = input image width
         newBgHeight = height
-        newBgWidth  = int(newBgHeight * bgWidth / bgHeight)
+        newBgWidth = int(newBgHeight * bgWidth / bgHeight)
         bg = bg.resize((newBgWidth, newBgHeight), Image.ANTIALIAS)
         # Paste input image to BG, center-aligned
         bg.paste(img, (int((newBgWidth / 2) - (width / 2)), 0), img)
     # Save resulting image to output folder, named a random UUID
-    bg.save('./output/'+str(uuid.uuid4())+'.png',"PNG")
+    bg.save('./output/'+str(uuid.uuid4())+'.png', "PNG")
 
 # Get all input image locations in the input folder
 inputImages = os.listdir('input')
 inputPaths = [f'./input/{inputImage}' for inputImage in inputImages
- if inputImage != '.DS_Store']
+              if inputImage != '.DS_Store']
 # Get all background locations in the bg folder
 bgs = os.listdir('bg')
 bgPaths = [f'./bg/{bg}' for bg in bgs if bg != '.DS_Store']
