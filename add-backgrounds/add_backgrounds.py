@@ -30,6 +30,9 @@ def append_background(infile, inbg):
         bg = bg.resize((newBgWidth, newBgHeight), Image.ANTIALIAS)
         # Paste input image to BG, center-aligned
         bg.paste(img, (0, int((newBgHeight / 2) - (height / 2))), img)
+        # Crop image to retain input image dimensions
+        bg = bg.crop((0, int((newBgHeight / 2) - (height / 2)),
+                     width, int((newBgHeight / 2) + (height / 2))))
     else:  # background is wider
         # Resize BG such that BG width = input image width
         newBgHeight = height
@@ -37,7 +40,10 @@ def append_background(infile, inbg):
         bg = bg.resize((newBgWidth, newBgHeight), Image.ANTIALIAS)
         # Paste input image to BG, center-aligned
         bg.paste(img, (int((newBgWidth / 2) - (width / 2)), 0), img)
-    # Save resulting image to output folder, named a random UUID
+        # Crop image to retain input image dimensions
+        bg = bg.crop((int((newBgWidth / 2) - (width / 2)), 0,
+                     int((newBgWidth / 2) + (width / 2)), height))
+    # Save resulting image to output folder, named a random UUID (for now)
     bg.save('./output/'+str(uuid.uuid4())+'.png', "PNG")
 
 # Get all input image locations in the input folder
