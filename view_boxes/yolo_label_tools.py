@@ -3,14 +3,14 @@ from PIL import Image, ImageDraw
 
 def count_from_top(img):
     """ helper function for find_pixel_edges
-    if a row is all zeros or "shaded", a pixel count is added
-    INPUT numpy array
+    if a row is all zeros, a pixel count is added
+    INPUT numpy array (m x n)
     OUTPUT int
     """
     pixel_count = 0
     for row in img:
-        unique_pixel_vals = np.unique(row)
-        if 255 not in unique_pixel_vals: # ignore shading (values between 0-255)
+        vals = np.unique(row)
+        if 255 not in vals:
             pixel_count += 1
         else:
             return pixel_count
@@ -58,8 +58,10 @@ def find_yolo_coordinates(infile):
 
     w = (width - x_left - x_right) / width      # width of bounding box
     h = (height - y_top - y_bottom) / height    # height of bounding box
-    x = (1 - w / 2) - x_right / width           # x center of box (distance right from UL)
-    y = (1 - h / 2) - y_bottom / height         # y center of box (distance down from UL)
+    x = (.5 * (width - w) + x_left) / width     # x center of box (distance right from UL)
+    y = (.5 * (height - h) + y_top) / height    # y center of box (distance down from UL)
+    x = (width - .5*width*w - x_right) / width
+    y = (height - .5*height*h - y_bottom)/ height
 
     return x, y, w, h
 
