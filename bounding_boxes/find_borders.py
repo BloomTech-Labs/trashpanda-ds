@@ -3,7 +3,7 @@
 import cv2
 import numpy as np
 import os
-from PIL import Image, ImageDraw, ImageFont, ImageEnhance
+from PIL import Image, ImageDraw
 import time
 
 def count_from_top(img):
@@ -55,8 +55,8 @@ def find_yolo_coordinates(y_top, y_bottom, x_left, x_right, width, height):
     """
     w = (width - x_left - x_right) / width      # width of bounding box
     h = (height - y_top - y_bottom) / height    # height of bounding box
-    x = (.5 * (width - w) + x_left) / width     # x center of box (distance right from UL)
-    y = (.5 * (height - h) + y_top) / height    # y center of box (distance down from UL)
+    x = (1 - w / 2) - x_right / width           # x center of box (distance right from UL)
+    y = (1 - h / 2) - y_bottom / height         # y center of box (distance down from UL)
 
     return x,y,w,h
 
@@ -95,6 +95,7 @@ def show_yolo_boxes(infile):
     cv2.imshow(infile, image_with_box)     
     cv2.waitKey(200) # necessary otherwise the image doesn't render
     time.sleep(1)
+    cv2.destroyAllWindows()
 
 # An for loop useful for exploring multiple images
 images = os.listdir('tires')
