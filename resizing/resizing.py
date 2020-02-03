@@ -1,3 +1,6 @@
+'''Python Script to check image size and resize if any or both of the dimensions is bigger than 1080.
+ This job will replace the old image by the new resized image'''
+
 # importing libraries
 import os
 from PIL import Image
