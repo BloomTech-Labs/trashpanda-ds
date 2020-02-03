@@ -4,9 +4,9 @@
 
 🚫 Each student has a required minimum number of meaningful PRs each week per the rubric.  Contributing to docs does NOT count as a PR to meet your weekly requirements.
 
-# 1️⃣ Title of project goes here
+# The Trash Panda
 
-You can find the project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
+You can find the project at [The Trash Panda](thetrashpanda.com).
 
 ## 5️⃣ Contributors
 
@@ -32,9 +32,9 @@ You can find the project at [🚫URL NAME GOES HERE](🚫copy and paste URL here
 ## Project Overview
 
 
-1️⃣ [Trello Board](🚫add link to trello board here)
+[Trello Board](https://github.com/Lambda-School-Labs/trashpanda-ds/projects/1)
 
-1️⃣ [Product Canvas](🚫add link to product canvas here)
+[Product Canvas](https://www.notion.so/d2e8748fdffe4c66a0a6641582dd6b63?v=4c919ea10f204aa89cd9184d59a9e6f4)
 
 🚫 Replace lorem ipsum with a description of your project
 
@@ -44,7 +44,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 🚫  delete if front end is not applicable to your project
 
-1️⃣ [Deployed Front End](🚫add link to deployed app here)
+[Deployed Front End](thetrashpanda.com)
 
 ### Tech Stack
 
