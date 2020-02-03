@@ -1,0 +1,556 @@
+
+0
+Acids
+3
+Aerosol Cans - Full
+6
+Alkaline Batteries
+6
+Aluminum Beverage Cans
+5
+Aluminum Foil
+6
+Aluminum Food Cans
+4
+Aluminum Pie Plates
+2
+Aluminum Trays
+3
+Ammunition
+5
+Antifreeze
+4
+Arts and Crafts Supplies
+3
+Asbestos
+2
+Auto Parts
+4
+Bicycles
+4
+Blu-Ray Players
+2
+Blue Glass Beverage Containers
+4
+Blue Glass Containers
+3
+Boomboxes
+3
+Brown Glass Beverage Containers
+4
+Brown Glass Containers
+4
+Button Cell Batteries
+4
+CD Players
+2
+CDs
+6
+CFLs
+3
+Cables
+6
+Calculators
+4
+Car Batteries
+6
+Cassette Players
+2
+Cell Phones
+6
+Christmas Trees
+3
+Clear Glass Beverage Containers
+2
+Clear Glass Containers
+3
+Clothing
+4
+Cooking Oil
+4
+Cookware
+5
+Corks
+4
+Crayons
+6
+DVD Players
+2
+DVDs
+4
+Desktop Computers
+5
+Digital Cameras
+4
+Drink Boxes
+3
+Drink Pouches
+3
+Electronic Servers
+1
+Envelopes
+5
+Eyeglasses
+5
+Fabric
+5
+Ferrous Metals
+2
+Fertilizers
+2
+Fire Extinguishers
+5
+Floppy Disks
+5
+Freezers
+4
+Game Consoles
+4
+Green Glass Beverage Containers
+1
+Green Glass Containers
+2
+Halogen Bulbs
+5
+Hardware
+3
+Heaters
+3
+Herbicides
+2
+Home Electronics
+3
+Household Cleaners
+3
+Household Furniture
+4
+Hoverboards
+3
+Hydraulic Fluid
+1
+Incandescent Lightbulbs
+5
+Inkjet Cartridges
+6
+Insecticides
+3
+Items Containing Mercury
+2
+Kerosene
+2
+Lacquer
+2
+Laptop Computers
+5
+Lead-acid Batteries - Non-automotive
+1
+Linens
+2
+Lithium Batteries
+6
+Lithium-ion Batteries
+4
+Lumber
+4
+Magazines
+4
+Marine Batteries
+2
+Mattresses
+5
+Medication Containers
+4
+Medications
+6
+Mixed Paper
+6
+Motor Oil
+4
+Newspaper
+5
+Nickel-cadmium Batteries
+3
+Nickel-metal Hydride Batteries
+3
+Nickel-zinc Batteries
+3
+Non-Organic Food Waste
+2
+Nonferrous Metals
+2
+Office Furniture
+4
+Office Supplies
+3
+Oil Filters
+3
+Organic Food Waste
+3
+Pallets
+3
+Paper Cups
+5
+Paperback Books
+4
+Paperboard
+3
+Photographic Chemicals
+2
+Porcelain Products
+3
+Printers
+5
+Propane Tanks
+6
+Refrigerators
+4
+Scanners
+1
+Shoes
+5
+Small Appliances
+4
+Sporting Goods
+2
+Steel Cans
+4
+Steel Lids
+2
+String Lights
+2
+Tablets
+3
+Telephones
+2
+Tires
+5
+Toner Cartridges
+4
+Toothbrushes
+6
+Toothpaste Tubes
+5
+Toys
+3
+Typewriters
+1
+Vacuum Cleaners
+3
+Washer/Dryers
+3
+Water Filters
+4
+X-rays
+2
+Yoga Mats
+2
+#1 Plastic
+1
+#2 Plastic
+1
+#4 Plastic
+1
+#5 Plastic
+1
+#6 Plastic
+1
+#7 Plastic
+1
+Asphalt
+2
+Branches
+1
+Brick
+3
+Brush
+2
+CD Cases
+1
+Candy Wrappers
+4
+Carpet
+4
+Cassette Tapes
+4
+Chip Bags
+4
+Cigarettes
+4
+Concrete
+2
+Construction Materials
+2
+Corrugated Cardboard
+3
+Dirt
+2
+Doors
+1
+Fluorescent Tubes
+3
+Gasoline
+2
+Gift Bags
+3
+Hair
+2
+Hard Drives
+4
+Latex Paint
+2
+Leaves
+1
+Manure
+1
+Microwaves
+3
+Nail Polish
+3
+Office Paper
+2
+Phone Books
+2
+Pizza Boxes
+5
+Plastic Cards
+2
+Plastic Furniture
+1
+Sand
+1
+Smoke Detectors
+2
+Stone
+2
+Tennis Balls
+2
+Tile
+1
+Tools
+2
+Transmission Fluid
+1
+Trophies
+2
+Vehicles
+2
+Video Tapes
+3
+Windows
+4
+Wood
+3
+Yard Waste
+3
+#1 Plastic Bags
+2
+#1 Plastic Beverage Bottles
+2
+#1 Plastic Clamshells
+2
+#1 Plastic Film
+2
+#1 Plastic Non-Beverage Bottles
+2
+#1 Plastic Trays
+2
+#1 Rigid Plastics
+2
+#2 Plastic Bags
+2
+#2 Plastic Bottles
+2
+#2 Plastic Caps
+2
+#2 Plastic Clamshells
+2
+#2 Plastic Film
+2
+#2 Plastic Jugs - Clear
+2
+#2 Plastic Jugs - Colored
+2
+#2 Rigid Plastics
+2
+#3 Plastic Bags
+2
+#3 Plastic Bottles
+2
+#3 Plastic Film
+2
+#3 Rigid Plastics
+2
+#4 Flexible Plastics
+2
+#4 Plastic Bags
+2
+#4 Plastic Bottles
+2
+#4 Plastic Film
+2
+#4 Rigid Plastics
+2
+#5 Plastic Bags
+2
+#5 Plastic Bottles
+2
+#5 Plastic Caps
+2
+#5 Plastic Clamshells
+2
+#5 Plastic Cups
+2
+#5 Plastic Film
+2
+#5 Rigid Plastics
+2
+#6 Plastic - Expanded
+2
+#6 Plastic Bags
+2
+#6 Plastic Bottles
+2
+#6 Plastic Clamshells - Expanded
+2
+#6 Plastic Cups
+2
+#6 Plastic Cups - Expanded
+2
+#6 Plastic Film
+2
+#6 Plastic Peanuts
+2
+#6 Rigid Plastics
+2
+#7 Plastic Bags
+2
+#7 Plastic Bottles
+2
+#7 Plastic Film
+2
+#7 Rigid Plastics
+2
+Compostable Plastics
+2
+Gas Cylinders
+1
+HHW
+1
+Mercury Thermostats
+2
+Multi-wall Paper Bags
+2
+Neon Lights
+1
+Paper Labels
+1
+Silver-oxide Batteries
+1
+Six-pack Rings
+2
+Zinc-air Batteries
+1
+Zinc-carbon Batteries
+1
+Plastic Bags
+1
+Plastic Beverage Bottles
+1
+Baby Products
+1
+Bike Tires
+2
+CRT Televisions
+2
+Cell Phone Accessories
+1
+Dehumidifiers
+2
+Garden Tools
+1
+Glue Sticks
+2
+Hair Spray
+3
+LCD Computer Monitors
+2
+LCD Televisions
+2
+Light Fixtures
+1
+Metal Clothes Hangers
+2
+Metal Paint Cans
+2
+Motor Oil Containers
+1
+Perfumes
+3
+Pesticides
+2
+Plastic Egg Cartons
+2
+Power Tools
+2
+Projectors
+1
+Record Players
+1
+VCRs
+2
+Varnish
+1
+Video Game Cartridges
+1
+Video Game Peripherals
+1
+Vinyl Records
+1
+Weeds
+1
+Air Conditioners
+1
+Audio Equipment
+1
+Auto Bodies
+1
+Barbeque Grills
+2
+Brake Fluid
+2
+CRT Computer Monitors
+2
+Car Fluids
+2
+Ceramic Tile
+1
+Explosives
+1
+Flip-Flops
+1
+Gas/Oil Mixture
+1
+Hair Dye
+1
+Lead Paint Chips
+1
+Lighter Fluid
+1
+MP3 Players
+2
+Medical Equipment - Handheld
+1
+Musical Instruments - Metal *
+1
+Office Machines
+1
+Pool Chemicals
+1
+Radiators
+1
+Nail Polish Removers
+1
+Paint Thinners
+1
+Toasters
+1
