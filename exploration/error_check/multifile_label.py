@@ -7,8 +7,6 @@ from PIL import Image, ImageDraw
 import time
 from yolo_label_tools import count_from_top, find_pixel_edges, find_yolo_coordinates
 
-image_dir = 'downloads'
-
 class_labels = []
 with open('classes.txt') as f:
     for line in f:
@@ -17,11 +15,11 @@ with open('classes.txt') as f:
 
 dirs = []
 png_filepaths = []
-for r, d, f in os.walk(image_dir, topdown=False):
+for r, d, f in os.walk('images', topdown=False):
     for directory in d:
         dirs.append(directory)
     for file in f:
-        if file.endswith('png'):
+        if file.endswith('.png'):
             path = os.path.join(r, file)
             png_filepaths.append(path)
 
