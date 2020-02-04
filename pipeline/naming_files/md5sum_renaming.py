@@ -2,14 +2,6 @@
 to hash and extension (md5sum)'''
 
 
-# # rename all files inside folder called images_to_rename
-# for fname in os.listdir('./images_to_rename'):
-#     name, ext = os.path.splitext(fname)
-#     hash = hash_file(fname)
-#     dst = hash + ext
-#     print(fname + " --> " + dst)
-#     os.rename(fname, dst)
-
 # importing libraries
 import hashlib
 import os
