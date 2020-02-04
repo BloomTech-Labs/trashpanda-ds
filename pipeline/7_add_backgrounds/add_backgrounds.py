@@ -13,6 +13,7 @@ and file names.
 """
 
 import os
+from shutil import copyfile
 from random import randint
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 
@@ -114,12 +115,20 @@ for unique_object in unique_objects:
 # For all the input images
 for x in range(0, len(image_filepaths)):
     print(image_filepaths[x])
-    if (len(blacklist[image_folderpaths[x]]) >= number_bg_folders):
-        print('You blacklisted all background types. Skipping image.')
-    else:
-        # Pick a random background
-        random_image = randint(0, len(bg_filepaths) - 1)
-        # Reroll if selected background is in the blacklist
-        while bg_folderpaths[random_image] in blacklist[image_folderpaths[x]]:
+    try:
+        if (len(blacklist[image_folderpaths[x]]) >= number_bg_folders):
+            print('You blacklisted all background types. Skipping image.')
+            copyfile('./'+images_folder_name+'/'+image_filepaths[x],
+                     './output/'+image_filepaths[x])
+            continue
+        else:
+            # Pick a random background
             random_image = randint(0, len(bg_filepaths) - 1)
+            # Reroll if selected background is in the blacklist
+            while bg_folderpaths[random_image] in \
+                blacklist[image_folderpaths[x]]:
+                random_image = randint(0, len(bg_filepaths) - 1)
+            append_background(image_filepaths[x], bg_filepaths[random_image])
+    except KeyError: # Object has no blacklist
+        random_image = randint(0, len(bg_filepaths) - 1)
         append_background(image_filepaths[x], bg_filepaths[random_image])
