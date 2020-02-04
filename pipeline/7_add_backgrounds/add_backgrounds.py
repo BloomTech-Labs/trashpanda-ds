@@ -1,17 +1,38 @@
 #!/usr/bin/env python3
 
+""" add_backgrounds adds a random background to every image in an input folder.
+Based on the object in the image, it's possible to blacklist certain
+backgrounds (ex: no tires on a carpet background).
+
+The appended background will first scale to the size of the image, then crop
+such that the background's dimensions are identical to the image. This is so
+the bounding boxes remain accurate.
+
+Parsed images will appear in an output folder, retaining the same directories
+and file names.
+"""
+
 import os
-import uuid
 from random import randint
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 
 images_folder_name = 'input'
 
 # Image category blacklist, currently used for testing
+# Background categories include:
+# abstract
+# carpet
+# garage
+# greenery
+# hardwood
+# inside_car
+# tabletop
+# urban_outdoor
 blacklist = {
     'tires': ['tabletop', 'carpet', 'abstract'],
     'battery': ['greenery', 'urban_outdoor']
     }
+
 
 def append_background(infile, inbg):
     """ Function to paste background to an image and save it
@@ -50,57 +71,55 @@ def append_background(infile, inbg):
         # Crop image to retain input image dimensions
         bg = bg.crop((int((newBgWidth / 2) - (width / 2)), 0,
                      int((newBgWidth / 2) + (width / 2)), height))
-    # Save resulting image to output folder, named a random UUID (for now)
+    # Save resulting image to output folder, located in the same directory/file
+    # name as oriented in the input folder
     bg.save('./output/'+infile, "PNG")
 
 
-image_filepaths = []
-image_folderpaths = []
-bg_filepaths = []
-bg_folderpaths = []
+image_filepaths = []  # Will contain all the image filepaths
+image_folderpaths = []  # Will contain the folder names of all the images
+bg_filepaths = []  # Will contain all the background filepaths
+bg_folderpaths = []  # Will contain all the folder names of all the backgrounds
 
 for r, d, f in os.walk('.', topdown=False):
     for file in f:
-        if file != '.DS_Store': # macOS constantly adds this file we don't want
+        # Discard unwanted macOS file
+        if file != '.DS_Store':
+            # For all the input images
             if './'+images_folder_name+'/' in r:
-                path = os.path.join(r.replace('./'+images_folder_name+'/', ''), file)
-                folder = os.path.join(r.replace('./'+images_folder_name+'/', ''))
+                path = os.path.join(r.replace('./'+images_folder_name+'/',
+                                              ''), file)
+                folder = os.path.join(r.replace('./'+images_folder_name+'/',
+                                                ''))
                 image_filepaths.append(path)
                 image_folderpaths.append(folder)
+            # For all the background images
             elif './bg/' in r:
                 path = os.path.join(r.replace('./bg/', ''), file)
                 folder = os.path.join(r.replace('./bg/', ''))
                 bg_filepaths.append(path)
                 bg_folderpaths.append(folder)
 
-'''
-print(image_filepaths)
-print()
-print(image_folderpaths)
-print()
-print(bg_filepaths)
-print()
-print(bg_folderpaths)
-print()
-'''
-
+# Get a list of all the unique objects (for directory creation)
 unique_objects = list(set(image_folderpaths))
+# Get the number of background categories (to prevent infinite loop
+# if all background categories are blacklisted)
 number_bg_folders = len(list(set(bg_folderpaths)))
 
+# Create the directories of the object names in the output folder
 for unique_object in unique_objects:
     if not os.path.exists('./output/'+unique_object):
         os.makedirs('./output/'+unique_object)
 
-for x in range(0,len(image_filepaths)):
+# For all the input images
+for x in range(0, len(image_filepaths)):
     print(image_filepaths[x])
-    print(image_folderpaths[x])
-    print(blacklist[image_folderpaths[x]])
     if (len(blacklist[image_folderpaths[x]]) >= number_bg_folders):
         print('You blacklisted all background types. Skipping image.')
     else:
+        # Pick a random background
         random_image = randint(0, len(bg_filepaths) - 1)
+        # Reroll if selected background is in the blacklist
         while bg_folderpaths[random_image] in blacklist[image_folderpaths[x]]:
             random_image = randint(0, len(bg_filepaths) - 1)
-        print(bg_filepaths[random_image])
-        print()
         append_background(image_filepaths[x], bg_filepaths[random_image])
