@@ -65,11 +65,12 @@ def show_boxes(image_file,text_file):
 """
 # Pair image to .txt. Flag if missing
 image_types = ['png','jpg']
+image_dir = 'classes'
 
 images = []
 texts = []
 errors = []
-for r, d, f in os.walk('images', topdown=False):
+for r, d, f in os.walk(image_dir, topdown=False):
     for file in f:
         path = os.path.join(r, file)
         if imghdr.what(path) in image_types:
@@ -89,6 +90,7 @@ if len(errors) > 0:
 
 print(images)
 
+flagged_images = []
 for i,image in enumerate(images):
     current_image = os.path.splitext(image)[0]
     current_text = os.path.splitext(texts[i])[0]
@@ -97,7 +99,15 @@ for i,image in enumerate(images):
         #pass # Success, stay silent
     else:
         print(f"Error pairing image: {current_image} with text {current_text}")
-        resp = input("Continue? <y/n>")
+        resp = input("Flag image and Continue? <y/n>")
+        if resp == 'n':
+            pass
+        elif resp == 'y':
+            flagged_images.append(image)
+        else:
+            print("Response not understood, keeping image, continuing")
+if flagged_images:
+    print("Problems with these images:",flagged_images)
 """
 # Test for single local image.
 image = "10.cd4160_288fa06c8d6d4e47a61dfef1bd69ba2c~mv2.png"

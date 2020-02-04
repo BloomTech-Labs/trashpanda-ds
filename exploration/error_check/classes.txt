@@ -1,0 +1,3 @@
+battery
+motor_oil
+tires
