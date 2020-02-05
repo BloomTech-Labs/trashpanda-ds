@@ -15,7 +15,7 @@ and file names.
 import os
 from shutil import copyfile
 from random import randint
-from PIL import Image, ImageDraw, ImageFont, ImageEnhance
+from PIL import Image
 
 images_folder_name = 'input'
 
