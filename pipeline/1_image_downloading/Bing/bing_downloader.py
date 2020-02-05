@@ -42,6 +42,6 @@ itemNames = [item.replace("_", " ") for item in items]
 # Run bbid.py depending on your parameters
 for x in range(0, len(items)):
     if transparent:
-        os.system("python bbid.py -s '" + itemNames[x] + "' -o './downloads/" + items[x] + "' --limit " + str(limit) + " --filters +filterui:photo-transparent")
+        os.system("python bbid.py -s '" + itemNames[x] + "' -o './downloads/" + items[x] + "' --limit " + str(limit) + " --filters +filterui:photo-transparent+filterui:photo-photo")
     else:
-        os.system("python bbid.py -s '" + itemNames[x] + "' -o './downloads/" + items[x] + "' --limit " + str(limit))
+        os.system("python bbid.py -s '" + itemNames[x] + "' -o './downloads/" + items[x] + "' --limit " + str(limit) + " --filters +filterui:photo-photo")
