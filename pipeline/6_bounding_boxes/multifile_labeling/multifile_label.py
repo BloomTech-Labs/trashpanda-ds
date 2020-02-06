@@ -33,6 +33,10 @@ for png_path in png_filepaths:
     class_label = png_path.split('/')[-2] 
     class_label_number = str(class_labels.index(class_label) + 1) # yolo counts from 1
     coordinates = find_yolo_coordinates(png_path)
+    if coordinates == None: # image is empty and ALL transparent
+        print('blank image found:',png_path)
+        os.remove(png_path)
+        continue
     coordinates = [str(coordinate) for coordinate in coordinates]
     line = ','.join([class_label_number] +  coordinates)
     print(line)
