@@ -49,10 +49,14 @@ def find_yolo_coordinates(infile):
     """
     try: # If image is a png RGBA, this throws no error
         img = np.asarray(Image.open(infile))
-        height, width, _ = img.shape
+        height, width, depth = img.shape
+        if depth != 4:
+            raise   # depth is likely 2 (grayscale, alpha)
+                    # convert to RGBA to give depth 4
+
     except: # Convert to RGBA and continue
         img = np.asarray(Image.open(infile).convert('RGBA'))
-        height, width, _ = img.shape
+        height, width, depth = img.shape
 
     y_top, y_bottom, x_left, x_right = find_pixel_edges(img)
 
