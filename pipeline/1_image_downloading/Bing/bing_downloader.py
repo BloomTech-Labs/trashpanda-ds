@@ -15,7 +15,7 @@ We download the Bulk Bing Image Downloader in this script to prevent copy/pastin
 '''
 
 import os
-import wget
+import urllib.request
 from random import choice
 
 '''
@@ -32,7 +32,7 @@ if os.path.exists('./bbid.py'):
 else:
     print('bbid.py not found. Downloading...')
     url = 'https://raw.githubusercontent.com/ostrolucky/Bulk-Bing-Image-downloader/6ab4c76b3f3c6bd9636ab547364765330eb48ad2/bbid.py'
-    wget.download(url, './bbid.py')
+    urllib.request.urlretrieve(url, './bbid.py')
 
 # Create an array of all the item names (spaces instead of underscores)
 itemNames = [item.replace("_", " ") for item in items]
