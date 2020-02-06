@@ -15,6 +15,7 @@ We download the Bulk Bing Image Downloader in this script to prevent copy/pastin
 '''
 
 import os
+import sys
 import urllib.request
 from random import choice
 
@@ -23,7 +24,7 @@ Items include:
 'aerosol_cans_full', 'aluminium_foil', 'ammunition', 'auto_parts', 'batteries', 'bicycles', 'cables', 'cardboard', 'cartridge', 'cassette', 'cd_cases', 'cigarettes', 'cooking_oil', 'cookware', 'corks', 'crayons', 'digital_cameras', 'desktop_computers', 'discs', 'doors', 'eyeglasses', 'fabrics', 'fire_extinguishers', 'floppy_disks', 'furniture', 'game_consoles', 'generic_plastic', 'gift_bags', 'glass', 'glass_container', 'green_waste', 'hard_drives', 'hardware', 'hazardous_fluid', 'heaters', 'laptop_computers', 'large_appliance', 'lightbulb', 'medication_containers', 'medications', 'metal_cans', 'mixed_paper', 'mobile_device', 'monitors', 'nail_polish', 'oil_filters', 'paint', 'paint_thinner', 'pallets', 'paper_cups', 'pet_waste', 'plastic_cards', 'printers', 'propane_tanks', 'shoes', 'small_appliances', 'smoke_detectors', 'tires', 'tools', 'toothbrushes', 'toothpaste_tubes', 'toy', 'vehicles', 'water_filters', 'wood', 'wrapper'
 '''
 items = ['glass_container', 'paper_cups', 'shoes']
-transparent = True
+transparent = False
 limit = 10
 
 # Download the Bulk Bing Image Downloader if it doesn't exist in the system
@@ -71,5 +72,16 @@ for x in range(0, len(items)):
     if transparent:
         randomizedFilter += '+filterui:photo-transparent'
 
-    # Run bbid.py
-    os.system("python bbid.py -s '" + randomizedSearch + "' -o './downloads/" + itemFolderNames[x] + "' --limit " + str(limit) + " --filters "+randomizedFilter)
+    # Run bbid.py, passing in appropriate arguments
+    sys.argv = [
+        "bbid.py",
+        "-s",
+        randomizedSearch,
+        "-o",
+        "downloads/"+itemFolderNames[x],
+        "--limit",
+        str(limit),
+        "--filters",
+        randomizedFilter
+    ]
+    exec(open("bbid.py").read())

@@ -1,4 +1,4 @@
-# Bing Downloader
+# Binger - Bing Downloader
 
 Downloads multiple images from Bing. Uses the Bulk Bing Image Downloader from
 https://github.com/ostrolucky/Bulk-Bing-Image-downloader
