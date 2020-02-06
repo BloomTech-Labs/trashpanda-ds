@@ -12,13 +12,11 @@ You can find the project at [The Trash Panda](https://www.thetrashpanda.com).
 
 🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
 
-|                                       [Timothy Hsu](https://github.com/TimTree)                                        |                                       [Tobias Reaper](https://github.com/tobiasfyi)                                        |                                       [Trevor Clack](https://github.com/tclack88)                                        |                                       [Vera Mendes](https://github.com/VeraMendes)                                        |                                       [Student 5](https://github.com/)                                        |
-| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://avatars2.githubusercontent.com/u/7098478?s=460&v=4" width = "200" />](https://github.com/TimTree)                       |                      [<img src="https://avatars0.githubusercontent.com/u/45893143?s=400&v=4" width = "200" />](https://github.com/tobias-fyi)                       |                      [<img src="https://avatars3.githubusercontent.com/u/39845330?s=460&v=4" width = "200" />](https://github.com/tclack88)                       |                      [<img src="https://avatars0.githubusercontent.com/u/54785435?s=460&v=4" width = "200" />](https://github.com/VeraMendes)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
-
-
+|                                              [Timothy Hsu](https://github.com/TimTree)                                               |                                          [Tobias Reaper](https://github.com/tobiasfyi)                                          |                                              [Trevor Clack](https://github.com/tclack88)                                              |                                             [Vera Mendes](https://github.com/VeraMendes)                                             |
+| :----------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------: |
+|         [<img src="https://avatars2.githubusercontent.com/u/7098478?s=460&v=4" width = "200" />](https://github.com/TimTree)         |    [<img src="https://avatars0.githubusercontent.com/u/45893143?s=400&v=4" width = "200" />](https://github.com/tobias-fyi)     |        [<img src="https://avatars3.githubusercontent.com/u/39845330?s=460&v=4" width = "200" />](https://github.com/tclack88)         |       [<img src="https://avatars0.githubusercontent.com/u/54785435?s=460&v=4" width = "200" />](https://github.com/VeraMendes)       |
+|                         [<img src="https://github.com/favicon.ico" width="15">](https://github.com/TimTree)                          |                      [<img src="https://github.com/favicon.ico" width="15">](https://github.com/tobiasfyi)                      |                         [<img src="https://github.com/favicon.ico" width="15">](https://github.com/tclack88)                          |                        [<img src="https://github.com/favicon.ico" width="15">](https://github.com/VeraMendes)                        |
+| [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/in/timothy-hsu-72877a171/) | [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/in/tobias-ea-reaper/) | [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/in/trevor-clack-774696184/) | [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/in/vera-mendes-1b7a60191/) |
 
 🚫 5️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
 
@@ -30,7 +28,6 @@ You can find the project at [The Trash Panda](https://www.thetrashpanda.com).
 🚫 more info on using badges [here](https://github.com/badges/shields)
 
 ## Project Overview
-
 
 [Trello Board](https://github.com/Lambda-School-Labs/trashpanda-ds/projects/1)
 
@@ -48,7 +45,11 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 ### Tech Stack
 
-🚫 List all of the languages, frameworks, services, etc used here.
+- Python
+- ForeCut: Automated image background removal
+  - [OpenCV](https://github.com/opencv/opencv)
+  - [Detectron2](https://github.com/facebookresearch/detectron2)
+  - [detectron2-pipeline](https://github.com/tobias-fyi/detectron2-pipeline) forked from [jagin](https://github.com/tobias-fyi/detectron2-pipeline)
 
 ### 2️⃣ Predictions
 
@@ -63,8 +64,8 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 -   Explanatory Variable 5
 
 ### Data Sources
-🚫  Add to or delete souce links as needed for your project
 
+🚫  Add to or delete source links as needed for your project
 
 -   [Source 1] (🚫add link to python notebook here)
 -   [Source 2] (🚫add link to python notebook here)
@@ -99,10 +100,11 @@ Please note we have a [code of conduct](./code_of_conduct.md.md). Please follow 
 ### Issue/Bug Request
 
  **If you are having an issue with the existing project code, please submit a bug report under the following guidelines:**
- - Check first to see if your issue has already been reported.
- - Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
- - Create a live example of the problem.
- - Submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes,  where you believe the issue is originating from, and any potential solutions you have considered.
+
+- Check first to see if your issue has already been reported.
+- Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
+- Create a live example of the problem.
+- Submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes,  where you believe the issue is originating from, and any potential solutions you have considered.
 
 ### Feature Requests
 
@@ -131,4 +133,3 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 See [Backend Documentation](_link to your backend readme here_) for details on the backend of our project.
 
 See [Front End Documentation](_link to your front end readme here_) for details on the front end of our project.
-
