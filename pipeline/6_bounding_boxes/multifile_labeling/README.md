@@ -24,4 +24,4 @@ Supporting functions for `multifile_labeling.py`
 
 - Add functionality to `update_classes.py` to change the first column of each .txt file to update the number if new classes are added without needing to redo the calculations with bounding box. VERY IMPORTANT because some things are going to have to be added manually and we can't rely on the .png/transparent background trick
 
-- Add functionality to preview bounding boxes. Maybe multithreading to "listen" to the user for sending flags when displaying. This can be entirely separate from the `multifile_labeling.py`. which can be run much like `find_borders.py` in `bounding-boxes` directory
+[x] Add functionality to preview bounding boxes. Maybe multithreading to "listen" to the user for sending flags when displaying. This can be entirely separate from the `multifile_labeling.py`. which can be run much like `find_borders.py` in `bounding-boxes` directory. NOTE: Created currently existing in ../post\_pipeline
