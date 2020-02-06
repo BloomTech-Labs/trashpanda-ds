@@ -9,17 +9,20 @@ limit - The higher the number, the more images you'll get. The number you insert
 
 Images will output to the downloads foler in their respective folder names, spaces replaced with underscores.
 
+Bing search terms/filters are randomized each time the script runs in hope that it downloads unique images each subsequent run.
+
 We download the Bulk Bing Image Downloader in this script to prevent copy/pasting someone else's code in our repo.
 '''
 
 import os
 import wget
+from random import choice
 
 '''
 Items include:
 'aerosol_cans_full', 'aluminium_foil', 'ammunition', 'auto_parts', 'batteries', 'bicycles', 'cables', 'cardboard', 'cartridge', 'cassette', 'cd_cases', 'cigarettes', 'cooking_oil', 'cookware', 'corks', 'crayons', 'digital_cameras', 'desktop_computers', 'discs', 'doors', 'eyeglasses', 'fabrics', 'fire_extinguishers', 'floppy_disks', 'furniture', 'game_consoles', 'generic_plastic', 'gift_bags', 'glass', 'glass_container', 'green_waste', 'hard_drives', 'hardware', 'hazardous_fluid', 'heaters', 'laptop_computers', 'large_appliance', 'lightbulb', 'medication_containers', 'medications', 'metal_cans', 'mixed_paper', 'mobile_device', 'monitors', 'nail_polish', 'oil_filters', 'paint', 'paint_thinner', 'pallets', 'paper_cups', 'pet_waste', 'plastic_cards', 'printers', 'propane_tanks', 'shoes', 'small_appliances', 'smoke_detectors', 'tires', 'tools', 'toothbrushes', 'toothpaste_tubes', 'toy', 'vehicles', 'water_filters', 'wood', 'wrapper'
 '''
-items = ['nuts and bolts', 'corks', 'pet waste']
+items = ['glass_container', 'paper_cups', 'shoes']
 transparent = True
 limit = 10
 
@@ -42,9 +45,31 @@ for itemFolderName in itemFolderNames:
     if not os.path.exists('./downloads/'+itemFolderName):
         os.makedirs('./downloads/'+itemFolderName)
 
-# Run bbid.py depending on your parameters
+# Initialize randomizer variables
+randomSearchAppend = ['', '', '', '', 'image of ', 'picture of ', 'photo of ', 'photograph of ', 'snapshot of ', ' image', ' picture', ' photo', ' photograph', ' snapshot']
+randomFilterAppend = ['', '', '', '+filterui:age-lt525600', '+filterui:license-L2_L3', '+filterui:aspect-square', '+filterui:aspect-wide', '+filterui:aspect-tall', '+filterui:imagesize-medium', '+filterui:imagesize-wallpaper']
+
+# For all the items
 for x in range(0, len(items)):
-    if transparent:
-        os.system("python bbid.py -s '" + itemNames[x] + "' -o './downloads/" + itemFolderNames[x] + "' --limit " + str(limit) + " --filters +filterui:photo-transparent+filterui:photo-photo")
+    randomizedFilter = '+filterui:photo-photo'
+    randomizedSearch = ''
+
+    # Select random search terms/fiilters
+    randomSearchSeed = choice(randomSearchAppend)
+    randomFilterSeed = choice(randomFilterAppend)
+
+    # If the search append if a prefix, add it before the item name
+    if 'of' in randomSearchSeed:
+        randomizedSearch = randomSearchSeed + itemNames[x]
+    # If the search append if a suffix, add it after the item name
     else:
-        os.system("python bbid.py -s '" + itemNames[x] + "' -o './downloads/" + itemFolderNames[x] + "' --limit " + str(limit) + " --filters +filterui:photo-photo")
+        randomizedSearch = itemNames[x] + randomSearchSeed
+
+    # Append the random filter to the filter list
+    randomizedFilter += randomFilterSeed
+    # Add the transparent filter if set
+    if transparent:
+        randomizedFilter += '+filterui:photo-transparent'
+
+    # Run bbid.py
+    os.system("python bbid.py -s '" + randomizedSearch + "' -o './downloads/" + itemFolderNames[x] + "' --limit " + str(limit) + " --filters "+randomizedFilter)
