@@ -3,17 +3,18 @@ import os
 from tqdm import tqdm
 import multiprocessing as mp
 
-from pipeline.capture_images import CaptureImages
-from pipeline.capture_image import CaptureImage
-from pipeline.predict import Predict
-from pipeline.async_predict import AsyncPredict
-from pipeline.separate_background import SeparateBackground
-from pipeline.annotate_image import AnnotateImage
-from pipeline.save_image import SaveImage
-from pipeline.utils import detectron
+from forecut_pipeline.capture_images import CaptureImages
+from forecut_pipeline.capture_image import CaptureImage
+from forecut_pipeline.predict import Predict
+from forecut_pipeline.async_predict import AsyncPredict
+from forecut_pipeline.separate_background import SeparateBackground
+from forecut_pipeline.annotate_image import AnnotateImage
+from forecut_pipeline.save_image import SaveImage
+from forecut_pipeline.utils import detectron
 """
 
-def process_images(
+
+def remove_bg(
     input_path,
     output_path="output",
     config_file="configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml",
@@ -29,7 +30,7 @@ def process_images(
 ):
     """
     :: Detectron2 image processing pipeline ::
-    Functionized version of `process_images.py` command line utility.
+    Modular version of `process_images.py` command line utility.
     
     Parameters
     ----------
@@ -111,11 +112,3 @@ def process_images(
         # Pipeline cleanup
         if isinstance(predict, AsyncPredict):
             predict.cleanup()
-
-"""
-if __name__ == "__main__":
-    # Test it out on some trashpanda training images
-    input_path = "assets/images/waste/glass-0001.png"
-
-    process_images(input_path)
-"""

@@ -27,7 +27,7 @@ def list_files(path, valid_exts=None, level=None, contains=None):
                 continue
 
             # Determine the file extension of the current file
-            ext = filename[filename.rfind("."):].lower()
+            ext = filename[filename.rfind(".") :].lower()
             if valid_exts and ext.endswith(valid_exts):
                 # Construct the path to the file and yield it
                 file = os.path.join(root_dir, filename)

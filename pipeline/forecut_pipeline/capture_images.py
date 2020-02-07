@@ -1,7 +1,7 @@
 import cv2
 
-from pipeline.pipeline import Pipeline
-import pipeline.utils.fs as fs
+from forecut_pipeline.pipeline import Pipeline
+import forecut_pipeline.utils.fs as fs
 
 
 class CaptureImages(Pipeline):
@@ -24,10 +24,7 @@ class CaptureImages(Pipeline):
                 image_file = next(source)
                 image = cv2.imread(image_file)
 
-                data = {
-                    "image_id": image_file,
-                    "image": image
-                }
+                data = {"image_id": image_file, "image": image}
 
                 if self.filter(data):
                     yield self.map(data)

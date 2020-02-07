@@ -4,7 +4,7 @@ import torch
 from detectron2.data import MetadataCatalog
 from detectron2.utils.visualizer import ColorMode, Visualizer
 
-from pipeline.pipeline import Pipeline
+from forecut_pipeline.pipeline import Pipeline
 
 
 class AnnotateImage(Pipeline):
@@ -35,18 +35,23 @@ class AnnotateImage(Pipeline):
         dst_image = data[self.dst]
         dst_image = dst_image[:, :, ::-1]  # Convert OpenCV BGR to RGB format
 
-        visualizer = Visualizer(dst_image, self.metadata, instance_mode=self.instance_mode)
+        visualizer = Visualizer(
+            dst_image, self.metadata, instance_mode=self.instance_mode
+        )
 
         if "panoptic_seg" in predictions:
             panoptic_seg, segments_info = predictions["panoptic_seg"]
-            vis_image = visualizer.draw_panoptic_seg_predictions(panoptic_seg.to(self.cpu_device),
-                                                                 segments_info)
+            vis_image = visualizer.draw_panoptic_seg_predictions(
+                panoptic_seg.to(self.cpu_device), segments_info
+            )
         elif "sem_seg" in predictions:
             sem_seg = predictions["sem_seg"].argmax(dim=0)
             vis_image = visualizer.draw_sem_seg(sem_seg.to(self.cpu_device))
         elif "instances" in predictions:
             instances = predictions["instances"]
-            vis_image = visualizer.draw_instance_predictions(instances.to(self.cpu_device))
+            vis_image = visualizer.draw_instance_predictions(
+                instances.to(self.cpu_device)
+            )
 
         # Converts RGB format to OpenCV BGR format
         vis_image = cv2.cvtColor(vis_image.get_image(), cv2.COLOR_RGB2BGR)

@@ -1,9 +1,19 @@
 import cv2
 
 
-def put_text(image, text, org, font_face=cv2.FONT_HERSHEY_SIMPLEX, font_scale=0.5,
-             color=(0, 0, 0), bg_color=None, thickness=1, line_type=cv2.LINE_AA,
-             org_pos="tl", padding=2):
+def put_text(
+    image,
+    text,
+    org,
+    font_face=cv2.FONT_HERSHEY_SIMPLEX,
+    font_scale=0.5,
+    color=(0, 0, 0),
+    bg_color=None,
+    thickness=1,
+    line_type=cv2.LINE_AA,
+    org_pos="tl",
+    padding=2,
+):
     x, y = org
     ret, baseline = cv2.getTextSize(text, font_face, font_scale, thickness)
 
@@ -29,11 +39,13 @@ def put_text(image, text, org, font_face=cv2.FONT_HERSHEY_SIMPLEX, font_scale=0.
         # Draw background box
         cv2.rectangle(image, bg_rect_pt1, bg_rect_pt2, bg_color, -1)
 
-    cv2.putText(image,
-                text=text,
-                org=text_org,
-                fontFace=font_face,
-                fontScale=font_scale,
-                color=color,
-                thickness=thickness,
-                lineType=line_type)
+    cv2.putText(
+        image,
+        text=text,
+        org=text_org,
+        fontFace=font_face,
+        fontScale=font_scale,
+        color=color,
+        thickness=thickness,
+        lineType=line_type,
+    )

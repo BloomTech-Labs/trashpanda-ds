@@ -1,6 +1,6 @@
 import cv2
 
-from pipeline.pipeline import Pipeline
+from forecut_pipeline.pipeline import Pipeline
 
 
 class CaptureImage(Pipeline):

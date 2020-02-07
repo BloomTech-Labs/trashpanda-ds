@@ -1,4 +1,4 @@
-from pipeline.pipeline import Pipeline
+from forecut_pipeline.pipeline import Pipeline
 
 import numpy as np
 import cv2
@@ -7,9 +7,10 @@ import cv2
 class SeparateBackground(Pipeline):
     def __init__(self, dst, me_kernel=(7, 7), bg_kernel=(21, 21), desaturate=True):
         self.dst = dst
-        self.me_kernel = me_kernel  # mask edges gaussian blur kernel
-        self.bg_kernel = bg_kernel  # background gaussian blur kernel
-        self.desaturate = desaturate  # convert background to grayscale
+        self.me_kernel = me_kernel  # Mask edges gaussian blur kernel
+        self.bg_kernel = bg_kernel  # Background gaussian blur kernel
+        self.desaturate = desaturate  # Convert background to grayscale
+        # TODO: remove desaturate functionality
 
         super().__init__()
 
@@ -33,12 +34,8 @@ class SeparateBackground(Pipeline):
         # Sum up all the instance masks
         mask = instances.pred_masks.cpu().sum(0) >= 1
         mask = mask.numpy().astype("uint8") * 255
-        print(f"Early mask shape: {mask.shape}")
         # Create 3-channels mask (now 4 channels)
         mask = np.stack([mask, mask, mask], axis=2)
-
-        # Apply a slight blur to the mask to soften edges
-        # mask = cv2.GaussianBlur(mask, self.me_kernel, 0)
 
         # Take the foreground input image
         foreground = data["image"]
@@ -46,7 +43,7 @@ class SeparateBackground(Pipeline):
         # Create a Gaussian blur for the background image
         background = cv2.GaussianBlur(foreground, self.bg_kernel, 0)
 
-        if self.desaturate:
+        if self.desaturate:  # TODO: remove desaturate functionality
             # Convert background into grayscale
             background = cv2.cvtColor(background, cv2.COLOR_BGR2GRAY)
             # convert single channel grayscale image to 3-channel grayscale image
@@ -61,10 +58,6 @@ class SeparateBackground(Pipeline):
 
         # Multiply the foreground with the mask
         foreground = cv2.multiply(foreground, mask)
-        print(f"Foreground: {foreground.shape}")
-
-        # Multiply the background with ( 1 - mask )
-        # background = cv2.multiply(background, 1.0 - mask)
 
         # Create blank black background
         background = np.zeros(background.shape)
@@ -79,6 +72,3 @@ class SeparateBackground(Pipeline):
         rgba = [b, g, r, alpha]
         dst2 = cv2.merge(rgba, 4)
         data[self.dst] = dst2.astype("uint8")
-
-        # Return a normalized output image for display
-        # data[self.dst] = dst_image.astype("uint8")

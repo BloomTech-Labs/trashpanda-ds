@@ -1,7 +1,7 @@
 import os
 import cv2
 
-from pipeline.pipeline import Pipeline
+from forecut_pipeline.pipeline import Pipeline
 
 
 class SaveImage(Pipeline):

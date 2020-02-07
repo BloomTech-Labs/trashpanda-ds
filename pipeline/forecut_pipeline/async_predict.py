@@ -1,18 +1,20 @@
 from collections import deque
 
-from pipeline.pipeline import Pipeline
-from pipeline.libs.async_predictor import AsyncPredictor
+from forecut_pipeline.pipeline import Pipeline
+from forecut_pipeline.libs.async_predictor import AsyncPredictor
 
 
 class AsyncPredict(Pipeline):
     """Pipeline task to perform prediction asynchronously (in separate processes)."""
 
     def __init__(self, cfg, num_gpus=1, num_cpus=1, queue_size=3, ordered=True):
-        self.predictor = AsyncPredictor(cfg,
-                                        num_gpus=num_gpus,
-                                        num_cpus=num_cpus,
-                                        queue_size=queue_size,
-                                        ordered=ordered)
+        self.predictor = AsyncPredictor(
+            cfg,
+            num_gpus=num_gpus,
+            num_cpus=num_cpus,
+            queue_size=queue_size,
+            ordered=ordered,
+        )
         self.ordered = ordered
         self.buffer_size = self.predictor.num_procs * queue_size
 

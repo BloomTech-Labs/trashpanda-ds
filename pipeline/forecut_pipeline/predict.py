@@ -1,4 +1,4 @@
-from pipeline.pipeline import Pipeline
+from forecut_pipeline.pipeline import Pipeline
 
 from detectron2.engine.defaults import DefaultPredictor
 

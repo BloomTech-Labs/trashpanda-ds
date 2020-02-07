@@ -55,7 +55,9 @@ class AsyncPredictor:
                 cfg.defrost()
                 cfg.MODEL.DEVICE = f"cuda:{gpuid}"
                 self.procs.append(
-                    AsyncPredictor._PredictWorker(cfg, self.task_queue, self.result_queue)
+                    AsyncPredictor._PredictWorker(
+                        cfg, self.task_queue, self.result_queue
+                    )
                 )
         if num_cpus > 0:
             # Run CPU workers
@@ -64,7 +66,9 @@ class AsyncPredictor:
                 cfg.defrost()
                 cfg.MODEL.DEVICE = "cpu"
                 self.procs.append(
-                    AsyncPredictor._PredictWorker(cfg, self.task_queue, self.result_queue)
+                    AsyncPredictor._PredictWorker(
+                        cfg, self.task_queue, self.result_queue
+                    )
                 )
 
         if self.ordered:
