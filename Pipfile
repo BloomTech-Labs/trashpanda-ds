@@ -1,0 +1,28 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+black = "*"
+pylint = "*"
+pytest = "*"
+
+[packages]
+numpy = "*"
+matplotlib = "*"
+tqdm = "*"
+opencv-python = "*"
+torch = "*"
+torchvision = "*"
+cython = "*"
+munkres = "*"
+fvcore = "*"
+pycocotools = {editable = true,git = "git://github.com/waspinator/coco.git",ref = "2.1.0"}
+9144601 = {editable = true,path = "./detectron2"}
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
