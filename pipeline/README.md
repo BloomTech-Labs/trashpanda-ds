@@ -22,9 +22,11 @@ Those images are resized, renamed (to their md5sum hash) and yolo labels are fou
 
 Any transparent images are now appended to backgrounds
 
-images with opaque backgrounds: their backgrounds are removed and placed in an `output` directory. Right now, adding the bounding boxes to those isn't implemented, but commented out code in the bottom of the script suggests a way of doing this
+images with opaque backgrounds: their backgrounds are removed and placed in an `output` directory as png files (blanks images if suggested by the model are removed). Yolo labels are found for these and paired with their original jpeg counterparts under `images`.
 
-[ ] TODO: add the yolo labeling back in
+Despite some cleaning up and refactoring, this is a working pipeline to process and label images from start to finish
+
+[x] TODO: add the yolo labeling back in
 
 [ ] TODO: modularize/ refactor the pipeline
 

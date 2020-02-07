@@ -80,6 +80,14 @@ for transparent_path in transparent_filepaths:
     class_label = transparent_path.split("/")[-2]
     class_label_number = str(class_labels.index(class_label) + 1)  # yolo counts from 1
     coordinates = find_yolo_coordinates(transparent_path)
+
+    # remove blank image, (repeated below, consider during refactorization
+    if coordinates == None:
+        print('blank image:', transparent_path)
+        os.remove(png_path)
+        continue
+
+
     coordinates = [str(coordinate) for coordinate in coordinates]
     line = ",".join([class_label_number] + coordinates)
     file_stem = os.path.splitext(transparent_path)[0]
@@ -146,9 +154,27 @@ for x in range(0, len(image_filepaths)):
 # exec(open("process_images.py").read())
 # {py process_images.py -i assets/images -p --cpus 2}
 
+for opaque_path in opaque_filepaths:  # e.g. opaque_path = images/tires/abc.jpg
+    remove_bg(opaque_path) # creates file without background
+    file_stem = os.path.splitext(opaque_path)[0] # images/tires/abc
+    output_file = f"output/{file_stem}.png"   # output/images/tires/abc.png
+    class_label = opaque_path.split('/')[-2] # tires
+    class_label_number = str(class_labels.index(class_label) + 1) # yolo counts from 1
+    coordinates = find_yolo_coordinates(output_file)
+    # remove blank images
+    if coordinates == None:
+        print('blank image:', output_file,"removing...")
+        os.remove(output_file)
+        os.remove(opaque_path)
+        continue
 
-for opaque_path in opaque_filepaths:
-    remove_bg(opaque_path)
+    coordinates = [str(coordinate) for coordinate in coordinates]
+    line = ','.join([class_label_number] +  coordinates)
+    print('appending coordinates:',line)
+    with open(f'{file_stem}.txt','w') as f:
+        f.write(line)
+
+
 
 """
 for opaque_path in opaque_filepaths: # e.g. opaque_path = images/tires/abc.jpg
