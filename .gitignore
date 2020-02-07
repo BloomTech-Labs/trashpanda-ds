@@ -1,5 +1,7 @@
 # ====== Project-Specific ====== #
 
+# Detectron2 should be cloned and built manually
+detectron2/
 
 # === Models === #
 *.h5
