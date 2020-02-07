@@ -58,6 +58,8 @@ def find_yolo_coordinates(infile):
         height, width, depth = img.shape
 
     y_top, y_bottom, x_left, x_right = find_pixel_edges(img)
+    if y_top == None: # y_top chosen, but any would work
+        return None
 
     w = (width - x_left - x_right) / width      # width of bounding box
     h = (height - y_top - y_bottom) / height    # height of bounding box
