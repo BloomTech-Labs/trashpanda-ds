@@ -7,7 +7,7 @@ import numpy as np
 import os
 from PIL import Image, ImageDraw
 from preprocess import image_resize, file_as_bytes, hash_file, rename_files, is_transparent, append_background, blacklist
-from dt2.forecut import process_images
+from forecut import process_images
 from random import randint
 import sys
 from yolo_label_tools import count_from_top, find_pixel_edges, find_yolo_coordinates

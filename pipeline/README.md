@@ -1,19 +1,25 @@
-# Data Pipeline
+# The Pipeline
 
-Collection of directories with scripts numbered in order of preprocessing.
+TLDR: make a copy of `downloads` to `images` then execute `pipeline.py`
 
-## Tentative ordering
+Sample images are provided in `downloads`, this can serve as a backup (of original, untouched images). For testing, it's advised to make a copy of this directory called `images`. A directory called `pipeline` exists that's unrelated to this data pipeline, it's built in to the architecture of the detectron2 library we're using
 
-1. `1_image_downloading` - uses google image downloader to scrape images (currently defaults to those with transparent backgrounds)
 
-2. `2_resizing` - reduce dimensionality of images to 1080p on longest axis if necessary.
+## Pipeline in summary:
 
-3. `3_renaming` - renames images to their md5sum. Improves unique naming and serves as a check for duplicates
+`images` is searched for the existance of new, unlabeled data,
 
-4. `4_discern_images` - differentiates png files from jpeg. png files go directly to bounding box script whereas jpeg must have background removed via `5_forecut`.
+Those images are resized, renamed (to their md5sum hash) and yolo labels are found
 
-5. `5_forecut` (if applicable) - automates removing backgrounds (foreground extraction) from jpeg or other images using [OpenCV](https://github.com/opencv/opencv) and [Detectron2](https://github.com/facebookresearch/detectron2).
+Any transparent images are now appended to backgrounds
 
-6. `6_bounding_boxes` - Finds bounding boxes for images. Saves class labels and coordinates in .txt file.
+images with opaque backgrounds: their backgrounds are removed and placed in an `output` directory. Right now, adding the bounding boxes to those isn't implemented, but commented out code in the bottom of the script suggests a way of doing this
 
-7. `7_add_backgrounds` (if applicable) - Add backgrounds to downloaded png files that had transparent backgrounds.
+[ ] TODO: add the yolo labeling back in
+
+[ ] TODO: modularize/ refactor the pipeline
+
+
+
+## Detectron2
+Credit is given where credit is due. Removing backgrounds is done via an implementation of Facebook AI Research's very own [Detectron2](https://github.com/facebookresearch/detectron2)
