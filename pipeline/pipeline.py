@@ -148,7 +148,7 @@ for x in range(0, len(image_filepaths)):
 
 
 for opaque_path in opaque_filepaths:
-    process_images(opaque_path)
+    remove_bg(opaque_path)
 
 """
 for opaque_path in opaque_filepaths: # e.g. opaque_path = images/tires/abc.jpg

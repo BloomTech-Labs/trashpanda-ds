@@ -1,4 +1,3 @@
-"""
 import os
 from tqdm import tqdm
 import multiprocessing as mp
@@ -11,7 +10,6 @@ from forecut_pipeline.separate_background import SeparateBackground
 from forecut_pipeline.annotate_image import AnnotateImage
 from forecut_pipeline.save_image import SaveImage
 from forecut_pipeline.utils import detectron
-"""
 
 
 def remove_bg(
