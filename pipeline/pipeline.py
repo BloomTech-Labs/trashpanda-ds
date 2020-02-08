@@ -24,8 +24,8 @@ try:
     from forecut import remove_bg
 except:
     detectron_input = input("""\nCould not import detectron2.\n
-Would you like to run the pipeline without removing backgrounds
-on nontransparent images? (y/n) """).upper()
+Would you like to run the pipeline without labeling
+nontransparent images? (y/n) """).upper()
     if detectron_input != "Y":
         print("Closing pipeline...")
         sys.exit()
