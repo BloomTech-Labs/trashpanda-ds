@@ -63,7 +63,9 @@ lonely_images = set(images_basenames) - set(texts_basenames)
 
 unlabeled_images = [li + extensions_dict[li] for li in lonely_images]
 
-
+print("Unlabeled images: ", unlabeled_images)
+print()
+print("Resizing/renaming images...\n")
 #### resize, rename and separate new images
 transparent_filepaths = []
 opaque_filepaths = []
@@ -80,8 +82,13 @@ for unlabeled_image in unlabeled_images:
 
 
 #### Take care of transparent images
+print("Transparent images: ", transparent_filepaths)
+print()
+print("Opaque images: ", opaque_filepaths)
+print()
 
 # Add bounding boxes
+print("Adding bounding boxes to transparent images...\n")
 class_labels = []
 with open("classes.txt") as f:
     for line in f:
@@ -107,10 +114,9 @@ for transparent_path in transparent_filepaths:
         f.write(line)
 
 
-print(transparent_filepaths)
-
-
 # Add background!!!
+
+print("Adding backgrounds to transparent images...\n")
 
 image_filepaths = transparent_filepaths  # Contains all the image filepaths
 image_folderpaths = [
@@ -130,15 +136,12 @@ for r, d, f in os.walk("bg", topdown=False):
         bg_filepaths.append(path)
         bg_folderpaths.append(folder)
 
-print(bg_filepaths)
-print(bg_folderpaths)
 # Get the number of background categories (to prevent infinite loop
 # if all background categories are blacklisted)
 number_bg_folders = len(list(set(bg_folderpaths)))
 
 
 for x in range(0, len(image_filepaths)):
-    # print(image_filepaths[x])
     try:
         if len(blacklist[image_folderpaths[x]]) >= number_bg_folders:
             print("You blacklisted all background types. Skipping image.")
@@ -155,6 +158,7 @@ for x in range(0, len(image_filepaths)):
         random_image = randint(0, len(bg_filepaths) - 1)
         append_background(image_filepaths[x], bg_filepaths[random_image])
 
+print()
 ##### Take care of images without transparent backgrounds
 
 
@@ -167,10 +171,11 @@ for x in range(0, len(image_filepaths)):
 # {py process_images.py -i assets/images -p --cpus 2}
 
 if run_detectron:
+    print("Running detectron...\n")
     for opaque_path in opaque_filepaths:  # e.g. opaque_path = images/tires/abc.jpg
         remove_bg(opaque_path) # creates file without background
         file_stem = os.path.splitext(opaque_path)[0] # images/tires/abc
-        output_file = f"output/{file_stem}.png"   # output/images/tires/abc.png
+        output_file = os.path.join('output', file_stem + '.png') # output/images/tires/abc.png
         class_label = os.path.normpath(opaque_path).split(os.sep)[1] # tires
         class_label_number = str(class_labels.index(class_label) + 1) # yolo counts from 1
         coordinates = find_yolo_coordinates(output_file)
@@ -187,7 +192,7 @@ if run_detectron:
         with open(f'{file_stem}.txt','w') as f:
             f.write(line)
 
-
+print("Pipeline complete!")
 
 """
 for opaque_path in opaque_filepaths: # e.g. opaque_path = images/tires/abc.jpg

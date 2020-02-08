@@ -7,10 +7,6 @@ from PIL import Image, ImageDraw
 from random import randint
 
 
-image_dir = 'images'
-
-
-
 def image_resize(image_file):
     ''' Check image width and height. If width or/and height are bigger than 
     1080 pixels, image is resized. Biggest dimension will be 1080 pixels and 
@@ -67,6 +63,7 @@ def rename_files(fpath, unique_images):
         unique_images.append(hash_name)
         # rename file as file hash + ext 
         os.rename(fpath, os.path.join(head, hash_name))
+        print(os.path.join(head, hash_name))
     else:
         os.remove(fpath)                      # remove the duplicates
 
@@ -93,9 +90,7 @@ def append_background(infile, inbg):
     OUTPUT: image rendered
     """
 
-    print(image_dir)
     try:  # Check if the files are images
-        print('trying')
         print(infile)
         img = Image.open(infile).convert('RGBA')
         bg = Image.open(inbg).convert('RGBA')
@@ -103,7 +98,7 @@ def append_background(infile, inbg):
         bgWidth, bgHeight = bg.size
         print("background appended!")
     except:
-        print("At least one of the files is not an image.")
+        print("File is not an image.")
         return
     # Get aspect ratios of the input and background images
     aspectRatio = width / height
