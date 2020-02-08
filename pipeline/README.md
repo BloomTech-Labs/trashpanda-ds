@@ -2,11 +2,11 @@
 
 ## Instructions
 
-TLDR: make a copy of `downloads` to `images`, clone and build detectron2, then execute `pipeline.py`.
+TLDR: Run `make_images_folder.py`, clone and build detectron2, then execute `pipeline.py`.
 
 ### Test images
 
-Sample images are provided in `downloads`, this can serve as a backup (of original, untouched images). For testing, it's advised to make a copy of this directory called `images`. A directory called `pipeline` exists that's unrelated to this data pipeline, it's built in to the architecture of the detectron2 library we're using.
+Sample images are provided in `downloads`, this can serve as a backup (of original, untouched images). For testing, `make_images_folder.py` will copy the downloads folder to a directory called `images`. A directory called `pipeline` exists that's unrelated to this data pipeline, it's built in to the architecture of the detectron2 library we're using.
 
 ### Background removal
 
