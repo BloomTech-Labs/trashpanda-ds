@@ -89,7 +89,7 @@ with open("classes.txt") as f:
 
 
 for transparent_path in transparent_filepaths:
-    class_label = transparent_path.split("/")[-2]
+    class_label = os.path.normpath(transparent_path).split(os.sep)[1]
     class_label_number = str(class_labels.index(class_label) + 1)  # yolo counts from 1
     coordinates = find_yolo_coordinates(transparent_path)
 
@@ -112,10 +112,10 @@ print(transparent_filepaths)
 
 # Add background!!!
 
-image_filepaths = transparent_filepaths  # Will contain all the image filepaths
+image_filepaths = transparent_filepaths  # Contains all the image filepaths
 image_folderpaths = [
-    transparent_filepath.split("/")[1] for transparent_filepath in transparent_filepaths
-]  # Will contain the folder names of all the images
+    os.path.normpath(transparent_filepath).split(os.sep)[1] for transparent_filepath in transparent_filepaths
+]  # Contains the folder names of all the images
 bg_filepaths = []  # Will contain all the background filepaths
 bg_folderpaths = []  # Will contain all the folder names of all the backgrounds
 
@@ -125,8 +125,8 @@ for r, d, f in os.walk("bg", topdown=False):
         # Discard unwanted macOS file
         # if file != '.DS_Store':  TODO: DEAL WITH IT
         # For all the background images
-        path = os.path.join(r.replace("bg/", ""), file)
-        folder = os.path.join(r.replace("bg/", ""))
+        path = os.path.join(r, file)
+        folder = os.path.normpath(r).split(os.sep)[1]
         bg_filepaths.append(path)
         bg_folderpaths.append(folder)
 
@@ -171,7 +171,7 @@ if run_detectron:
         remove_bg(opaque_path) # creates file without background
         file_stem = os.path.splitext(opaque_path)[0] # images/tires/abc
         output_file = f"output/{file_stem}.png"   # output/images/tires/abc.png
-        class_label = opaque_path.split('/')[-2] # tires
+        class_label = os.path.normpath(opaque_path).split(os.sep)[1] # tires
         class_label_number = str(class_labels.index(class_label) + 1) # yolo counts from 1
         coordinates = find_yolo_coordinates(output_file)
         # remove blank images

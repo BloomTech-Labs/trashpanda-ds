@@ -65,11 +65,12 @@ def rename_files(fpath, unique_images):
     #checking for duplicate files
     if hash_name not in unique_images:
         unique_images.append(hash_name)
-        os.rename(fpath, head + "/" + hash_name)    # rename file as file hash + ext 
+        # rename file as file hash + ext 
+        os.rename(fpath, os.path.join(head, hash_name))
     else:
         os.remove(fpath)                      # remove the duplicates
 
-    return f"{head}/{hash_name}"
+    return os.path.join(head, hash_name)
 
 
 
@@ -97,7 +98,7 @@ def append_background(infile, inbg):
         print('trying')
         print(infile)
         img = Image.open(infile).convert('RGBA')
-        bg = Image.open('./bg/'+inbg).convert('RGBA')
+        bg = Image.open(inbg).convert('RGBA')
         width, height = img.size
         bgWidth, bgHeight = bg.size
         print("background appended!")
