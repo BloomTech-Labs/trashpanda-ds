@@ -13,13 +13,7 @@ numpy = "*"
 matplotlib = "*"
 tqdm = "*"
 opencv-python = "*"
-torch = "*"
-torchvision = "*"
 cython = "*"
-munkres = "*"
-fvcore = "*"
-pycocotools = {editable = true,git = "git://github.com/waspinator/coco.git",ref = "2.1.0"}
-9144601 = {editable = true,path = "./detectron2"}
 
 [requires]
 python_version = "3.7"
