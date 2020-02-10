@@ -5,7 +5,7 @@ import sys
 
 import tensorflow as tf
 
-ROOT_DIR = os.path.abspath("./")
+ROOT_DIR = os.path.abspath("./Mask_RCNN")
 
 # Import Mask R-CNN
 # sys.path.append(ROOT_DIR)
