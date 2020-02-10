@@ -67,7 +67,7 @@ def forecut(input_path=IMAGE_DIR, output_path="output", progress=True):
     """
 
     # Modify images directory if needed
-    IMAGE_DIR = os.path.join(ROOT_DIR, input_path)
+    # IMAGE_DIR = os.path.join(ROOT_DIR, input_path)
 
     # Create output directory if needed
     os.makedirs(output_path, exist_ok=True)
@@ -103,3 +103,53 @@ def forecut(input_path=IMAGE_DIR, output_path="output", progress=True):
         return
     except KeyboardInterrupt:
         return
+
+
+def forecut_multiple(input_paths, output_path="output", progress=True):
+    """
+    ForeCut :: Removes image background
+    
+    Parameters
+    ----------
+    input_path : str / path
+        Path to input image file or directory.
+    output_path : str / path, optional
+        Path to output directory, default "output"
+    progress : bool, optional
+        Display progress, by default True
+    """
+
+    # Create output directory if needed
+    os.makedirs(output_path, exist_ok=True)
+
+    # === Define pipeline steps === #
+
+    # Create model instance
+    model = setup_model()
+
+    for path in input_paths:
+
+        # Load image
+        load_images = LoadImages(path) if os.path.isdir(path) else LoadImage(path)
+
+        # Predict
+        predict = Predict(model)
+
+        # Remove background
+        vimg = "vimg"
+        remove_bg = RemoveBg(vimg)
+
+        # Save image
+        save_image = SaveImage(vimg, output_path)
+
+        # === Create the pipeline === #
+        pipeline = load_images | predict | remove_bg | save_image
+
+        # Iterate through pipeline
+        try:
+            for _ in tqdm(pipeline, disable=not progress):
+                pass
+        except StopIteration:
+            return
+        except KeyboardInterrupt:
+            return
