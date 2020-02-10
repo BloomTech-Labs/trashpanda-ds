@@ -22,6 +22,7 @@ ipython = {extras = ["all"],version = "*"}
 Cython = "*"
 Pillow = "*"
 Keras = ">=2.0.8"
+pycocotools = "*"
 
 [requires]
 python_version = "3.7"
