@@ -19,18 +19,22 @@ from random import randint
 import sys
 from yolo_label_tools import count_from_top, find_pixel_edges, find_yolo_coordinates
 
+from forecut import forecut, forecut_multiple
+
 run_detectron = True
-try:
-    from forecut import remove_bg
-except:
-    detectron_input = input("""\nCould not import detectron2.\n
-Would you like to run the pipeline without labeling
-nontransparent images? (y/n) """).upper()
-    if detectron_input != "Y":
-        print("Closing pipeline...")
-        sys.exit()
-    else:
-        run_detectron = False
+# try:
+#     from forecut import forecut
+# except:
+#     detectron_input = input(
+#         """\nCould not import detectron2.\n
+# Would you like to run the pipeline without labeling
+# nontransparent images? (y/n) """
+#     ).upper()
+#     if detectron_input != "Y":
+#         print("Closing pipeline...")
+#         sys.exit()
+#     else:
+#         run_detectron = False
 
 image_dir = "images"
 
@@ -102,10 +106,9 @@ for transparent_path in transparent_filepaths:
 
     # remove blank image, (repeated below, consider during refactorization
     if coordinates == None:
-        print('blank image:', transparent_path)
+        print("blank image:", transparent_path)
         os.remove(png_path)
         continue
-
 
     coordinates = [str(coordinate) for coordinate in coordinates]
     line = ",".join([class_label_number] + coordinates)
@@ -120,7 +123,8 @@ print("Adding backgrounds to transparent images...\n")
 
 image_filepaths = transparent_filepaths  # Contains all the image filepaths
 image_folderpaths = [
-    os.path.normpath(transparent_filepath).split(os.sep)[1] for transparent_filepath in transparent_filepaths
+    os.path.normpath(transparent_filepath).split(os.sep)[1]
+    for transparent_filepath in transparent_filepaths
 ]  # Contains the folder names of all the images
 bg_filepaths = []  # Will contain all the background filepaths
 bg_folderpaths = []  # Will contain all the folder names of all the backgrounds
@@ -159,56 +163,34 @@ for x in range(0, len(image_filepaths)):
         append_background(image_filepaths[x], bg_filepaths[random_image])
 
 print()
-##### Take care of images without transparent backgrounds
 
+# === Background Removal === #
+# TODO: Create (if not already existing) an `output` directory with the same
+# file structure of subdirectories and images
+# ====== ============ ====== #
 
-###
-# TODO Run Tobias' script on 'images' to remove backgrounds. This creates (if not already existing) an `output` directory with the same file structure of subdirectories and images
-###
+print("Running background removal...\n")
+forecut_multiple(opaque_filepaths)  # creates file without background
 
-# sys.argv = ["process_images.py", "-i", "assets/images", "-o", "-p", "--cpus", "2", "-sb"]
-# exec(open("process_images.py").read())
-# {py process_images.py -i assets/images -p --cpus 2}
+for opaque_path in opaque_filepaths:  # e.g. opaque_path = images/tires/abc.jpg
+    file_stem = os.path.splitext(opaque_path)[0]  # images/tires/abc
+    output_file = os.path.join(
+        "output", file_stem + ".png"
+    )  # output/images/tires/abc.png
+    class_label = os.path.normpath(opaque_path).split(os.sep)[1]  # tires
+    class_label_number = str(class_labels.index(class_label) + 1)  # yolo counts from 1
+    coordinates = find_yolo_coordinates(output_file)
+    # remove blank images
+    if coordinates == None:
+        print("blank image:", output_file, "removing...")
+        os.remove(output_file)
+        os.remove(opaque_path)
+        continue
 
-if run_detectron:
-    print("Running detectron...\n")
-    for opaque_path in opaque_filepaths:  # e.g. opaque_path = images/tires/abc.jpg
-        remove_bg(opaque_path) # creates file without background
-        file_stem = os.path.splitext(opaque_path)[0] # images/tires/abc
-        output_file = os.path.join('output', file_stem + '.png') # output/images/tires/abc.png
-        class_label = os.path.normpath(opaque_path).split(os.sep)[1] # tires
-        class_label_number = str(class_labels.index(class_label) + 1) # yolo counts from 1
-        coordinates = find_yolo_coordinates(output_file)
-        # remove blank images
-        if coordinates == None:
-            print('blank image:', output_file,"removing...")
-            os.remove(output_file)
-            os.remove(opaque_path)
-            continue
-
-        coordinates = [str(coordinate) for coordinate in coordinates]
-        line = ','.join([class_label_number] +  coordinates)
-        print('appending coordinates:',line)
-        with open(f'{file_stem}.txt','w') as f:
-            f.write(line)
+    coordinates = [str(coordinate) for coordinate in coordinates]
+    line = ",".join([class_label_number] + coordinates)
+    print("appending coordinates:", line)
+    with open(f"{file_stem}.txt", "w") as f:
+        f.write(line)
 
 print("Pipeline complete!")
-
-"""
-for opaque_path in opaque_filepaths: # e.g. opaque_path = images/tires/abc.jpg
-    file_stem = os.path.splitext(opaque_path)[0] # images/tires/abc
-    output_file = f"output/{file_stem}.png"   # output/tires/apc.jpg
-    output_path = 'output' #f"output/{'/'.join(file_stem.split('/')[1:])}"   # output/tires/
-    sys.argv = ["process_images.py", "-i", f"{opaque_path}", "-o", f"{output_path}", "-p", "--cpus", "2", "-sb", "--single-process"]
-    exec(open("process_images.py").read())
-    class_label = opaque_path.split('/')[-2] # tires
-    class_label_number = str(class_labels.index(class_label) + 1) # yolo counts from 1
-    coordinates = find_yolo_coordinates(output_file)
-    coordinates = [str(coordinate) for coordinate in coordinates]
-    line = ','.join([class_label_number] +  coordinates)
-    #print('class_label:', class_label)
-    #print('class_label_number:', class_label_number)
-    #print('line',line)
-    with open(f'{file_stem}.txt','w') as f:
-        f.write(line)
-"""

@@ -2,7 +2,9 @@
 
 ## Instructions
 
-TLDR: Run `make_images_folder.py`, clone and build detectron2, then execute `pipeline.py`.
+TLDR: Run `make_images_folder.py`, install dependencies listed in project root's Pipfile, then execute `pipeline.py`.
+
+Note: when `pipeline.py` is run for the first time on a new machine, the COCO-trained weights used in the Mask R-CNN background removal will automatically download. This `.h5` file is around 250mb, so may take a little while to download, depending on your internet speed.
 
 ### Test images
 
@@ -10,9 +12,7 @@ Sample images are provided in `downloads`, this can serve as a backup (of origin
 
 ### Background removal
 
-Automated image background removal is done via an implementation of Facebook AI Research's [Detectron2](https://github.com/facebookresearch/detectron2). As the model is not formally serialized, it must be built from source every time this pipeline is set up on a new machine or in a new environment.
-
-To build Detectron2 from source and install it into the working environment, follow the [installation instructions](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md).
+Automated image background removal is done via a Keras and Tensorflow implementation of [Mask R-CNN](https://github.com/matterport/Mask_RCNN/).
 
 ## Pipeline in summary:
 
@@ -32,4 +32,4 @@ Despite some cleaning up and refactoring, this is a working pipeline to process 
 
 ## Detectron2
 
-Credit is given where credit is due. Removing backgrounds is done via an implementation of Facebook AI Research's very own [Detectron2](https://github.com/facebookresearch/detectron2). The configuration and pseudo-deployment of Detectron2 was heavily inspired by jagin's [detectron2-pipeline](https://github.com/jagin/detectron2-pipeline).
+Credit is given where credit is due. Removing backgrounds is done via Matterport's implementation of [Mask R-CNN](https://github.com/matterport/Mask_RCNN/). The configuration of the Mask R-CNN pipeline was heavily inspired by jagin's [detectron2-pipeline](https://github.com/jagin/detectron2-pipeline).

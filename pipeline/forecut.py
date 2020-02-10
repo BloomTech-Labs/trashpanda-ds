@@ -1,34 +1,60 @@
+"""
+ForeCut :: Pipeline execution module
+
+To run the ForeCut pipeline, simply import and call
+the `forecut.remove_bg()` function.
+"""
+
+# Std library
 import os
-from tqdm import tqdm
+import math
 import multiprocessing as mp
+import sys
 
-from forecut_pipeline.capture_images import CaptureImages
-from forecut_pipeline.capture_image import CaptureImage
+# 3rd party
+import numpy as np
+import skimage.io
+from tqdm import tqdm
+
+# Root directory of the project
+# To import local packages and modules
+ROOT_DIR = os.path.abspath("./Mask_RCNN")
+sys.path.append(ROOT_DIR)
+
+# Import forecut pipeline
+from forecut_pipeline.load_image import LoadImage
+from forecut_pipeline.load_images import LoadImages
 from forecut_pipeline.predict import Predict
-from forecut_pipeline.async_predict import AsyncPredict
-from forecut_pipeline.separate_background import SeparateBackground
-from forecut_pipeline.annotate_image import AnnotateImage
+from forecut_pipeline.pipeline import Pipeline
+from forecut_pipeline.remove_bg import RemoveBg
 from forecut_pipeline.save_image import SaveImage
-from forecut_pipeline.utils import detectron
+from forecut_pipeline.utils.maskr import setup_model
+from forecut_pipeline.utils.vars import coco_class_names
+
+# Import Mask R-CNN
+from mrcnn import utils
+import mrcnn.model as modellib
+
+# # Import COCO config
+# sys.path.append(os.path.join(ROOT_DIR, "samples/coco/"))
+# import coco
+
+# # Directory to save logs and trained model
+# MODEL_DIR = os.path.join(ROOT_DIR, "logs")
+
+# # Local path to trained weights file
+# COCO_MODEL_PATH = os.path.join(ROOT_DIR, "mask_rcnn_coco.h5")
+# # Download COCO pre-trained weights if needed
+# if not os.path.exists(COCO_MODEL_PATH):
+#     utils.download_trained_weights(COCO_MODEL_PATH)
+
+# Directory of input images
+IMAGE_DIR = os.path.join(ROOT_DIR, "images")
 
 
-def remove_bg(
-    input_path,
-    output_path="output",
-    config_file="configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml",
-    weights_file=None,
-    config_opts=[],
-    confidence_threshold=0.5,
-    gpus=1,
-    cpus=0,
-    single_process=True,
-    queue_size=3,
-    separate_background=True,
-    progress=True,
-):
+def forecut(input_path=IMAGE_DIR, output_path="output", progress=True):
     """
-    :: Detectron2 image processing pipeline ::
-    Modular version of `process_images.py` command line utility.
+    ForeCut :: Removes image background
     
     Parameters
     ----------
@@ -36,67 +62,38 @@ def remove_bg(
         Path to input image file or directory.
     output_path : str / path, optional
         Path to output directory, default "output"
-    config_file : str / path, optional
-        Path to Detectron2 config file, default "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml"
-    weights_file : str / path, optional
-        Path to custom Detectron2 weights file, default None
-    config_opts : list, optional
-        Modify model config options, default []
-    confidence_threshold : float, optional
-        Minimum score for instance predictions to be shown, by default 0.5
-    gpus : int, optional
-        Number of GPUs, default 1
-    cpus : int, optional
-        Number of CPUs, default 0
-    single_process : bool, optional
-        force the pipeline to run in a single process, default True
-    queue_size : int, optional
-        Queue size per process, default 3
-    separate_background : bool, optional
-        Make background transparent, default True
     progress : bool, optional
         Display progress, by default True
     """
 
+    # Modify images directory if needed
+    # IMAGE_DIR = os.path.join(ROOT_DIR, input_path)
+
     # Create output directory if needed
     os.makedirs(output_path, exist_ok=True)
 
-    # Create pipeline steps
-    capture_images = (
-        CaptureImages(input_path)
-        if os.path.isdir(input_path)
-        else CaptureImage(input_path)
+    # === Define pipeline steps === #
+
+    # 1. Load image(s)
+    load_images = (
+        LoadImages(input_path) if os.path.isdir(input_path) else LoadImage(input_path)
     )
 
-    cfg = detectron.setup_cfg(
-        config_file=config_file,
-        weights_file=weights_file,
-        config_opts=config_opts,
-        confidence_threshold=confidence_threshold,
-        cpu=False if gpus > 0 else True,
-    )
-    if not single_process:
-        mp.set_start_method("spawn", force=True)
-        predict = AsyncPredict(
-            cfg, num_gpus=gpus, num_cpus=cpus, queue_size=queue_size, ordered=False
-        )
-    else:
-        predict = Predict(cfg)
+    # 2. Create model instance + predict
+    model = setup_model()
 
-    if separate_background:
-        separate_background = SeparateBackground("vis_image")
-        annotate_image = None
-    else:
-        separate_background = None
-        metadata_name = cfg.DATASETS.TEST[0] if len(cfg.DATASETS.TEST) else "__unused"
-        annotate_image = AnnotateImage("vis_image", metadata_name)
+    # 2.1 Predict
+    predict = Predict(model)
 
-    save_image = SaveImage("vis_image", output_path)
+    # 4. Remove background
+    vimg = "vimg"
+    remove_bg = RemoveBg(vimg)
 
-    # Create image processing pipeline
-    pipeline = (
-        capture_images | predict | separate_background | annotate_image | save_image
-    )
+    # 5. Save image(s)
+    save_image = SaveImage(vimg, output_path)
+
+    # === Create the pipeline === #
+    pipeline = load_images | predict | remove_bg | save_image
 
     # Iterate through pipeline
     try:
@@ -106,7 +103,53 @@ def remove_bg(
         return
     except KeyboardInterrupt:
         return
-    finally:
-        # Pipeline cleanup
-        if isinstance(predict, AsyncPredict):
-            predict.cleanup()
+
+
+def forecut_multiple(input_paths, output_path="output", progress=True):
+    """
+    ForeCut :: Removes image background
+    
+    Parameters
+    ----------
+    input_path : str / path
+        Path to input image file or directory.
+    output_path : str / path, optional
+        Path to output directory, default "output"
+    progress : bool, optional
+        Display progress, by default True
+    """
+
+    # Create output directory if needed
+    os.makedirs(output_path, exist_ok=True)
+
+    # === Define pipeline steps === #
+
+    # Create model instance
+    model = setup_model()
+
+    for path in input_paths:
+
+        # Load image
+        load_images = LoadImages(path) if os.path.isdir(path) else LoadImage(path)
+
+        # Predict
+        predict = Predict(model)
+
+        # Remove background
+        vimg = "vimg"
+        remove_bg = RemoveBg(vimg)
+
+        # Save image
+        save_image = SaveImage(vimg, output_path)
+
+        # === Create the pipeline === #
+        pipeline = load_images | predict | remove_bg | save_image
+
+        # Iterate through pipeline
+        try:
+            for _ in tqdm(pipeline, disable=not progress):
+                pass
+        except StopIteration:
+            return
+        except KeyboardInterrupt:
+            return
