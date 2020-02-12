@@ -115,4 +115,4 @@ image = "10.cd4160_288fa06c8d6d4e47a61dfef1bd69ba2c~mv2.png"
 text = "10.cd4160_288fa06c8d6d4e47a61dfef1bd69ba2c~mv2.txt"
 
 show_boxes(image,text)
-
+show_boxes('blank_test.png','blank_test.txt')

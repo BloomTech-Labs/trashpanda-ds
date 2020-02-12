@@ -44,6 +44,7 @@ mobile_device
 monitors
 nail_polish
 oil_filters
+office_supplies
 paint
 paint_thinner
 pallets
@@ -52,9 +53,11 @@ pet_waste
 plastic_cards
 printers
 propane_tanks
+scrap_metal
 shoes
 small_appliances
 smoke_detectors
+sporting_goods
 tires
 tools
 toothbrushes

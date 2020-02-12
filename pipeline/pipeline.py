@@ -57,7 +57,7 @@ for r, d, f in os.walk(image_dir, topdown=False):
 # TODO: deal with errors
 
 
-#### Find unlabelled (i.e. new) images
+#### Find unlabeled (i.e. new) images
 images_basenames = [os.path.splitext(image)[0] for image in images]
 images_extensions = [os.path.splitext(image)[1] for image in images]
 extensions_dict = dict(zip(images_basenames, images_extensions))
@@ -171,6 +171,7 @@ print()
 
 print("Running background removal...\n")
 forecut_multiple(opaque_filepaths)  # creates file without background
+blank_images = [] # If model removes everything, we must deal with it manually
 
 for opaque_path in opaque_filepaths:  # e.g. opaque_path = images/tires/abc.jpg
     file_stem = os.path.splitext(opaque_path)[0]  # images/tires/abc
@@ -182,9 +183,9 @@ for opaque_path in opaque_filepaths:  # e.g. opaque_path = images/tires/abc.jpg
     coordinates = find_yolo_coordinates(output_file)
     # remove blank images
     if coordinates == None:
-        print("blank image:", output_file, "removing...")
+        print("blank image:", output_file)
+        blank_images.append(opaque_path) # keep images where background is removed
         os.remove(output_file)
-        os.remove(opaque_path)
         continue
 
     coordinates = [str(coordinate) for coordinate in coordinates]
@@ -192,5 +193,11 @@ for opaque_path in opaque_filepaths:  # e.g. opaque_path = images/tires/abc.jpg
     print("appending coordinates:", line)
     with open(f"{file_stem}.txt", "w") as f:
         f.write(line)
+
+if blank_images:
+    print("""\nThe background was removed entirely for the following images, \
+        consider manual labeling""")
+    for blank in blank_images:
+        print("blank:", blank)
 
 print("Pipeline complete!")
