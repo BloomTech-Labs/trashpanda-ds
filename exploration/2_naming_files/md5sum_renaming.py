@@ -1,5 +1,4 @@
-'''Python script to name images without .txt file and then rename these images
-to hash and extension (md5sum)'''
+'''Python script to rename unlabeled images to hash and extension (md5sum)'''
 
 
 # importing libraries

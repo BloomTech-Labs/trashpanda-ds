@@ -62,23 +62,23 @@ images_basenames = [os.path.splitext(image)[0] for image in images]
 images_extensions = [os.path.splitext(image)[1] for image in images]
 extensions_dict = dict(zip(images_basenames, images_extensions))
 texts_basenames = [os.path.splitext(text)[0] for text in texts]
-
+print(texts_basenames)
 lonely_images = set(images_basenames) - set(texts_basenames)
-
+print(lonely_images)
 unlabeled_images = [li + extensions_dict[li] for li in lonely_images]
 
 print("Unlabeled images: ", unlabeled_images)
 print()
-print("Resizing/renaming images...\n")
-#### resize, rename and separate new images
+print("Renaming/resizing images...\n")
+#### rename, resize and separate new images
 transparent_filepaths = []
 opaque_filepaths = []
 unique_images = list(
     set(images) - set(unlabeled_images)
 )  # labeled images (already preprocessed)
 for unlabeled_image in unlabeled_images:
-    image_resize(unlabeled_image)
     new_name = rename_files(unlabeled_image, unique_images)
+    image_resize(new_name)
     if is_transparent(new_name):
         transparent_filepaths.append(new_name)
     else:

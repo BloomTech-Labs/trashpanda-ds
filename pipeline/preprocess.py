@@ -7,6 +7,42 @@ from PIL import Image, ImageDraw
 from random import randint
 
 
+def file_as_bytes(file):
+    '''read image file as bytes'''
+    with file:
+        return file.read()
+
+
+def hash_file(fpath):
+    '''create hash file'''
+    return hashlib.md5(file_as_bytes(open(fpath, 'rb'))).hexdigest()
+
+
+
+def rename_files(fpath, unique_images):
+    # separating the directory path (head) from the file (tail)
+    head, tail = os.path.split(fpath)
+    # separating the name of the file from its extension
+    name, ext = os.path.splitext(tail)
+    # in cases of file with no extension, add 'ext' first
+    if ext == '':
+        ext = '.' + imghdr.what(fpath)
+    # getting md5sum for image file
+    hash = hash_file(fpath)
+    # joining file hash with file extension
+    hash_name = hash + ext
+    #checking for duplicate files
+    if hash_name not in unique_images:
+        unique_images.append(hash_name)
+        # rename file as file hash + ext 
+        os.rename(fpath, os.path.join(head, hash_name))
+        print(os.path.join(head, hash_name))
+    else:
+        os.remove(fpath)                      # remove the duplicates
+
+    return os.path.join(head, hash_name)
+
+
 def image_resize(image_file):
     ''' Check image width and height. If width or/and height are bigger than 
     1080 pixels, image is resized. Biggest dimension will be 1080 pixels and 
@@ -33,44 +69,6 @@ def image_resize(image_file):
         wsize = int((float(img_width))*(float(hratio)))
         img = img.resize((wsize,maxheight), Image.ANTIALIAS)
         img.save(image_file)
-
-
-
-
-def file_as_bytes(file):
-    '''read image file as bytes'''
-    with file:
-        return file.read()
-
-
-def hash_file(fpath):
-    '''create hash file'''
-    return hashlib.md5(file_as_bytes(open(fpath, 'rb'))).hexdigest()
-
-
-
-def rename_files(fpath, unique_images):
-    # separating the directory path (head) from the file (tail)
-    head, tail = os.path.split(fpath)
-    # separating the name of the file from its extension
-    name, ext = os.path.splitext(tail)
-    # getting md5sum for image file
-    hash = hash_file(fpath)
-    # joining file hash with file extension
-    hash_name = hash + ext
-    #checking for duplicate files
-    if hash_name not in unique_images:
-        unique_images.append(hash_name)
-        # rename file as file hash + ext 
-        os.rename(fpath, os.path.join(head, hash_name))
-        print(os.path.join(head, hash_name))
-    else:
-        os.remove(fpath)                      # remove the duplicates
-
-    return os.path.join(head, hash_name)
-
-
-
 
 
 def is_transparent(image_filepath):
