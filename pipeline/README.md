@@ -30,6 +30,7 @@ Despite some cleaning up and refactoring, this is a working pipeline to process 
 
 [ ] TODO: modularize/ refactor the pipeline
 
+
 ## Detectron2
 
 Credit is given where credit is due. Removing backgrounds is done via Matterport's implementation of [Mask R-CNN](https://github.com/matterport/Mask_RCNN/). The configuration of the Mask R-CNN pipeline was heavily inspired by jagin's [detectron2-pipeline](https://github.com/jagin/detectron2-pipeline).
