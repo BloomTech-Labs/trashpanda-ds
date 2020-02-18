@@ -127,7 +127,7 @@ model = modellib.MaskRCNN(mode="inference", model_dir=MODEL_DIR, config=config)
 
 5. Pip install `tensorflow-gpu`
 
-6. The pieline should now use your GPU.
+6. The pipeline should now use your GPU.
 
 ### AMD GPU
 
@@ -135,4 +135,4 @@ model = modellib.MaskRCNN(mode="inference", model_dir=MODEL_DIR, config=config)
 
 5. Install ROCm as per [these instructions](https://github.com/RadeonOpenCompute/ROCm). Using Ubuntu is highly recommended.
 
-6. The pieline should now use your GPU.
+6. The pipeline should now use your GPU.
