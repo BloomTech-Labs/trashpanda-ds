@@ -2,7 +2,7 @@
 
 import os
 
-import skimage.io
+import cv2
 
 from forecut_pipeline.pipeline import Pipeline
 
@@ -18,7 +18,7 @@ class LoadImage(Pipeline):
     def generator(self):
         """Yields the image content and metadata."""
 
-        image = skimage.io.imread(self.src)
+        image = cv2.imread(self.src)
 
         data = {"image_id": self.src, "image": image}
 
