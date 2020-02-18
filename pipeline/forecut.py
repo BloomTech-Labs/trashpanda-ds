@@ -127,8 +127,11 @@ def forecut_multiple(input_paths, output_path="output", progress=True):
     # Create model instance
     model = setup_model()
 
+    total_input_paths = len(input_paths)
+    path_counter = 1
     for path in input_paths:
-
+        print("Removing background "+str(path_counter)+" out of "+str(total_input_paths))
+        print(path)
         # Load image
         load_images = LoadImages(path) if os.path.isdir(path) else LoadImage(path)
 
@@ -148,6 +151,7 @@ def forecut_multiple(input_paths, output_path="output", progress=True):
         # Iterate through pipeline
         try:
             for _ in tqdm(pipeline, disable=not progress):
+                path_counter += 1
                 pass
         except StopIteration:
             return

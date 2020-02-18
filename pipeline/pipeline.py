@@ -22,20 +22,6 @@ from yolo_label_tools import count_from_top, find_pixel_edges, find_yolo_coordin
 
 from forecut import forecut, forecut_multiple
 
-run_detectron = True
-# try:
-#     from forecut import forecut
-# except:
-#     detectron_input = input(
-#         """\nCould not import detectron2.\n
-# Would you like to run the pipeline without labeling
-# nontransparent images? (y/n) """
-#     ).upper()
-#     if detectron_input != "Y":
-#         print("Closing pipeline...")
-#         sys.exit()
-#     else:
-#         run_detectron = False
 
 image_dir = "images"
 class_file = "classes.txt"
@@ -83,9 +69,9 @@ for unlabeled_image in unlabeled_images:
     try:
         image_resize(new_name)
         if is_transparent(new_name):
-            transparent_filepaths.append(new_name)
+            transparent_filepaths.append(new_name) if new_name not in transparent_filepaths else None
         else:
-            opaque_filepaths.append(new_name)
+            opaque_filepaths.append(new_name) if new_name not in opaque_filepaths else None
     except FileNotFoundError:
         print("File not found")
         continue
@@ -113,6 +99,7 @@ for transparent_path in transparent_filepaths:
     if coordinates == None:
         print("blank image:", transparent_path,'removing...')
         os.remove(transparent_path)
+        transparent_filepaths.remove(transparent_path)
         continue
 
     coordinates = [str(coordinate) for coordinate in coordinates]
@@ -137,8 +124,6 @@ bg_folderpaths = []  # Will contain all the folder names of all the backgrounds
 
 for r, d, f in os.walk("bg", topdown=False):
     for file in f:
-        # Discard unwanted macOS file
-        # if file != '.DS_Store':  TODO: DEAL WITH IT
         # For all the background images
         path = os.path.join(r, file)
         folder = os.path.normpath(r).split(os.sep)[1]
@@ -163,7 +148,7 @@ for x in range(0, len(image_filepaths)):
                 random_image = randint(0, len(bg_filepaths) - 1)
             append_background(image_filepaths[x], bg_filepaths[random_image])
     except KeyError:  # Object has no blacklist
-        print("key error")
+        print("Warning: Object not in blacklist")
         random_image = randint(0, len(bg_filepaths) - 1)
         append_background(image_filepaths[x], bg_filepaths[random_image])
 
@@ -174,8 +159,10 @@ print()
 # file structure of subdirectories and images
 # ====== ============ ====== #
 
-print("Running background removal...\n")
-forecut_multiple(opaque_filepaths)  # creates file without background
+if (len(opaque_filepaths) > 0):
+    forecut_multiple(opaque_filepaths)  # creates file without background
+else:
+    print("No background removal needed")
 blank_images = [] # If model removes everything, we must deal with it manually
 
 for opaque_path in opaque_filepaths:  # e.g. opaque_path = images/tires/abc.jpg
@@ -190,7 +177,7 @@ for opaque_path in opaque_filepaths:  # e.g. opaque_path = images/tires/abc.jpg
     if coordinates == None:
         print("blank image:", output_file)
         blank_images.append(opaque_path) # keep images where background is removed
-        os.remove(output_file)
+        opaque_filepaths.remove(opaque_path)
         continue
 
     coordinates = [str(coordinate) for coordinate in coordinates]
