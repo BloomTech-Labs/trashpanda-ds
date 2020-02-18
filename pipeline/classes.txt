@@ -14,8 +14,8 @@ cooking_oil
 cookware
 corks
 crayons
-digital_cameras
 desktop_computers
+digital_cameras
 disks
 doors
 electronic_waste
