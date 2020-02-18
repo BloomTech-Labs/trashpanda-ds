@@ -68,9 +68,6 @@ To install WSL:
 
 To use WSL in VSCode, open the integrated terminal, and in the dropdown menu, select `Change default shell` and then select `WSL`.
 
-* If you're using Windows 10 1903 or newer, uncheck all Python app execution aliases. 
-
-
 ### When running pipenv install, you get TypeError: write() takes exactly one argument (3 given)
 
 If you're using WSL on Windows 10 1903 or newer, [uncheck all Python app execution aliases](https://superuser.com/questions/1437590/typing-python-on-windows-10-version-1903-command-prompt-opens-microsoft-stor). Somehow, those pesky aliases mess up pipenv, even though WSL is supposed to be isolated from Windows.
