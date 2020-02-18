@@ -72,9 +72,10 @@ def image_resize(image_file):
 
 def is_transparent(image_filepath):
     img = Image.open(image_filepath)
+    print(imghdr.what(image_filepath))
     if img.mode == 'RGBA' or 'transparency' in img.info:
         return True
-    elif imghdr.what(image_filepath) == ['png','gif']:
+    elif imghdr.what(image_filepath) in ['png','gif']:
         return True
     else:
         return False
@@ -122,8 +123,11 @@ def append_background(infile, inbg):
         bg = bg.crop((int((newBgWidth / 2) - (width / 2)), 0,
                      int((newBgWidth / 2) + (width / 2)), height))
     # Save resulting image to output folder, located in the same directory/file
-    # name as oriented in the input folder
-    bg.save(infile, "PNG")
+    # name as oriented in the input folder. Hardcode filename change so old extension
+    # (e.g. gif) isn't retained
+    new_pathname = f"{os.path.splitext(infile)[0]}.png" # Hard code filename change
+    os.remove(infile)
+    bg.save(new_pathname, "PNG")
 
 
 
