@@ -16,7 +16,7 @@ corks
 crayons
 digital_cameras
 desktop_computers
-discs
+disks
 doors
 electronic_waste
 eyeglasses

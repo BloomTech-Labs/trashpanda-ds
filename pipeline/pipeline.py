@@ -78,12 +78,15 @@ unique_images = list(
 )  # labeled images (already preprocessed)
 for unlabeled_image in unlabeled_images:
     new_name = rename_files(unlabeled_image, unique_images)
-    image_resize(new_name)
-    if is_transparent(new_name):
-        transparent_filepaths.append(new_name)
-    else:
-        opaque_filepaths.append(new_name)
-
+    try:
+        image_resize(new_name)
+        if is_transparent(new_name):
+            transparent_filepaths.append(new_name)
+        else:
+            opaque_filepaths.append(new_name)
+    except FileNotFoundError:
+        print("File not found")
+        continue
 
 #### Take care of transparent images
 print("Transparent images: ", transparent_filepaths)
@@ -106,8 +109,8 @@ for transparent_path in transparent_filepaths:
 
     # remove blank image, (repeated below, consider during refactorization
     if coordinates == None:
-        print("blank image:", transparent_path)
-        os.remove(png_path)
+        print("blank image:", transparent_path,'removing...')
+        os.remove(transparent_path)
         continue
 
     coordinates = [str(coordinate) for coordinate in coordinates]
