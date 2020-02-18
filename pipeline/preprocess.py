@@ -24,9 +24,8 @@ def rename_files(fpath, unique_images):
     head, tail = os.path.split(fpath)
     # separating the name of the file from its extension
     name, ext = os.path.splitext(tail)
-    # in cases of file with no extension, add 'ext' first
-    if ext == '':
-        ext = '.' + imghdr.what(fpath)
+    # find correct file extension 
+    ext = '.' + imghdr.what(fpath)
     # getting md5sum for image file
     hash = hash_file(fpath)
     # joining file hash with file extension
@@ -75,9 +74,10 @@ def is_transparent(image_filepath):
     img = Image.open(image_filepath)
     if img.mode == 'RGBA' or 'transparency' in img.info:
         return True
+    elif imghdr.what(image_filepath) == ['png','gif']:
+        return True
     else:
         return False
-
 
 
 
