@@ -57,62 +57,42 @@ def show_boxes(image_file,text_file):
     cv2.destroyAllWindows()
 
 
-# uncomment below to view boxes on multiple files at once
 # ASSUMPTION: There is a directory named "classes" containing sub directories of images
 # with corresponding .txt files with yolo labels (i.e. the multifile_labeling.py 
 # has been run
 
-"""
 # Pair image to .txt. Flag if missing
-image_types = ['png','jpg']
-image_dir = 'classes'
+image_dir = 'images'
 
 images = []
-texts = []
-errors = []
 for r, d, f in os.walk(image_dir, topdown=False):
     for file in f:
         path = os.path.join(r, file)
-        if imghdr.what(path) in image_types:
+        if imghdr.what(path) != None:
             images.append(path)
-        elif path.endswith('.txt'):
-            texts.append(path)
-        else:
-            print("non-conforming file:",path)
-            print(imghdr.what(path))
-            print()
 
-images = sorted(images)
-texts = sorted(texts)
+# Display images
+lonely_images = []
+for image in images:
+    try:
+        text = f'{os.path.splitext(image)[0]}.txt'
+        show_boxes(image,text)
+    except:
+        print("image found without text file:",image)
+        lonely_images.append(image)
 
-if len(errors) > 0:
-    print("file errors:",errors)
+if len(lonely_images) > 0:
+    print("Images without text files:")
+    print(lonely_images)
 
-print(images)
 
-flagged_images = []
-for i,image in enumerate(images):
-    current_image = os.path.splitext(image)[0]
-    current_text = os.path.splitext(texts[i])[0]
-    if current_image == current_text:
-        show_boxes(image, texts[i])
-        #pass # Success, stay silent
-    else:
-        print(f"Error pairing image: {current_image} with text {current_text}")
-        resp = input("Flag image and Continue? <y/n>")
-        if resp == 'n':
-            pass
-        elif resp == 'y':
-            flagged_images.append(image)
-        else:
-            print("Response not understood, keeping image, continuing")
-if flagged_images:
-    print("Problems with these images:",flagged_images)
+
+# Uncommoent to test on single local image.
 """
-# Test for single local image.
 image = "10.cd4160_288fa06c8d6d4e47a61dfef1bd69ba2c~mv2.png"
 
 text = "10.cd4160_288fa06c8d6d4e47a61dfef1bd69ba2c~mv2.txt"
 
 show_boxes(image,text)
 show_boxes('blank_test.png','blank_test.txt')
+"""
