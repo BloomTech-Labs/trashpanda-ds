@@ -196,3 +196,51 @@ blacklist = {
     'wood': ['carpet'],
     'wrapper': ['abstract'],
     }
+
+def update_classes(class_file, texts):
+    response = input(f"Perform update check with '{class_file}'? (y/n) ")
+    while response not in ['y','n']:
+        response = input("invalid response, (y,n): ")
+    if response == 'n':
+        return
+    if response == 'y':
+        print("Checking classes...")
+
+    classes_dict = {} # dictionary mapping items in classes.txt to line number
+    with open(class_file,'r') as f:
+        for i, line in enumerate(f):
+            classes_dict.update({line.rstrip() : str(i+1)})
+
+    # Check for changes in each line of each file
+    changes = 0 # keep track of number of files changed
+    for text in texts:
+        current_class = text.split('/')[-2]
+        try:
+            new_class_num = classes_dict[current_class]
+        except KeyError: # Stops operation if a class has been deleted
+            print(f"{'-'*50}\nclass '{current_class}' doesn't exist in '{class_file}'\n \
+                manually remove or delete it from images directory and try again")
+            exit(1)
+
+        with open(text,'r+') as t:
+            # convert each line into a list
+            # modify the number if necessary
+            lines = [line for line in t]
+            for i, line in enumerate(lines):
+                #print(line.split(',')[0]) # first number
+                #print(new_class_num)
+                if line.split(',')[0] != new_class_num:
+                    changes += 1
+                    print(f"changing class label for '{text}' \
+                        \nfrom {line.split(',')[0]} to {new_class_num}")
+                    lines[i] =  f"{new_class_num},{','.join(line.split(',')[1:])}"
+
+            t.seek(0) # go to zeroth byte in file, fully overwrite, truncate
+            t.write(''.join(lines))
+            t.truncate()
+
+
+    if changes > 0:
+        print(f"i\nnumber of files changes made: {changes}")
+    else: 
+        print("\nno changes made to class labels")

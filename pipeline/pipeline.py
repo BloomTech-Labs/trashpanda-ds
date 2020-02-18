@@ -14,6 +14,7 @@ from preprocess import (
     is_transparent,
     append_background,
     blacklist,
+    update_classes
 )
 from random import randint
 import sys
@@ -37,6 +38,8 @@ run_detectron = True
 #         run_detectron = False
 
 image_dir = "images"
+class_file = "classes.txt"
+
 
 images = []
 texts = []
@@ -50,12 +53,11 @@ for r, d, f in os.walk(image_dir, topdown=False):
             texts.append(path)
         else:
             errors.append(path)
-            # print("non-conforming file:",path)
-            # print(imghdr.what(path))
-            # print()
 
 # TODO: deal with errors
 
+#### Prompt to perform updating of any text files (from an update to class_file)
+update_classes(class_file, texts)
 
 #### Find unlabeled (i.e. new) images
 images_basenames = [os.path.splitext(image)[0] for image in images]
