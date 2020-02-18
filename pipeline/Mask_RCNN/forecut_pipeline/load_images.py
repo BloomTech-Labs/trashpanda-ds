@@ -1,6 +1,6 @@
 """ForeCut Pipeline :: Load multiple images"""
 
-import skimage.io
+import cv2
 
 from forecut_pipeline.pipeline import Pipeline
 import forecut_pipeline.utils.fs as fs
@@ -26,7 +26,7 @@ class LoadImages(Pipeline):
         while self.has_next():
             try:
                 image_file = next(source)
-                image = skimage.io.imread(image_file)
+                image = cv2.imread(image_file)
 
                 data = {"image_id": image_file, "image": image}
 
