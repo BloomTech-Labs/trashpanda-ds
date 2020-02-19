@@ -103,7 +103,7 @@ for transparent_path in transparent_filepaths:
         continue
 
     coordinates = [str(coordinate) for coordinate in coordinates]
-    line = ",".join([class_label_number] + coordinates)
+    line = " ".join([class_label_number] + coordinates)
     file_stem = os.path.splitext(transparent_path)[0]
     with open(f"{file_stem}.txt", "w") as f:
         f.write(line)
@@ -181,7 +181,7 @@ for opaque_path in opaque_filepaths:  # e.g. opaque_path = images/tires/abc.jpg
         continue
 
     coordinates = [str(coordinate) for coordinate in coordinates]
-    line = ",".join([class_label_number] + coordinates)
+    line = " ".join([class_label_number] + coordinates)
     print("appending coordinates:", line)
     with open(f"{file_stem}.txt", "w") as f:
         f.write(line)
