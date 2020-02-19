@@ -92,7 +92,7 @@ with open("classes.txt") as f:
 
 for transparent_path in transparent_filepaths:
     class_label = os.path.normpath(transparent_path).split(os.sep)[1]
-    class_label_number = str(class_labels.index(class_label) + 1)  # yolo counts from 1
+    class_label_number = str(class_labels.index(class_label))  # yolo counts from 0
     coordinates = find_yolo_coordinates(transparent_path)
 
     # remove blank image, (repeated below, consider during refactorization
@@ -171,7 +171,7 @@ for opaque_path in opaque_filepaths:  # e.g. opaque_path = images/tires/abc.jpg
         "output", file_stem + ".png"
     )  # output/images/tires/abc.png
     class_label = os.path.normpath(opaque_path).split(os.sep)[1]  # tires
-    class_label_number = str(class_labels.index(class_label) + 1)  # yolo counts from 1
+    class_label_number = str(class_labels.index(class_label))  # yolo counts from 0
     coordinates = find_yolo_coordinates(output_file)
     # remove blank images
     if coordinates == None:
