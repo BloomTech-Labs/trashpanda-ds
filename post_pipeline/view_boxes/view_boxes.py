@@ -27,7 +27,7 @@ def show_boxes(image_file,text_file):
 
     with open(text_file,'r') as t:
         lines = [line for line in t]
-        x,y,w,h = np.array(lines[0].split(',')[1:]).astype('float')
+        x,y,w,h = np.array(lines[0].split(' ')[1:]).astype('float')
 
     X, Y = x * width, y * height # Center of box (in pixel count)
     x_left, y_top = X - .5 * w * width, Y - .5 * h * height
@@ -76,6 +76,7 @@ lonely_images = []
 for image in images:
     try:
         text = f'{os.path.splitext(image)[0]}.txt'
+        print(text)
         show_boxes(image,text)
     except:
         print("image found without text file:",image)
