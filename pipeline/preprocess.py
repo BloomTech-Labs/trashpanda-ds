@@ -220,7 +220,7 @@ def update_classes(class_file, text_paths):
         classes_dict = {} # dictionary mapping items in classes.txt to line number
         with open(class_file,'r') as f:
             for i, line in enumerate(f):
-                classes_dict.update({line.rstrip() : str(i+1)})
+                classes_dict.update({line.rstrip() : str(i)})
 
         # Check for changes in each line of each file
         changes = 0 # keep track of number of files changed
