@@ -243,7 +243,7 @@ def update_classes(class_file, text_paths):
                         changes += 1
                         print(f"changing class label for '{text_path}' \
                             \nfrom {line.split(' ')[0]} to {new_class_num}")
-                        lines[i] =  f"{new_class_num},{' '.join(line.split(' ')[1:])}"
+                        lines[i] =  f"{new_class_num} {' '.join(line.split(' ')[1:])}"
 
                 t.seek(0) # go to zeroth byte in file, fully overwrite, truncate
                 t.write(''.join(lines))
