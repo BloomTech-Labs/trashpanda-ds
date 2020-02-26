@@ -11,3 +11,16 @@ Can be implemented after new image files are downloaded (after resizing if appli
 `trevor_transform.sh`
 
 A shell script used to correct an error in a previous iteration (where yolo coordinates were mistakenly comma separated instead of space separated). This shell script works on Linux and Mac on a folder called 'images' and changes all commas to spaces in .txt files. Included here for historical purposes I guess
+
+
+`manual_label_check.py`
+
+Checks your images after manual labeling for:
+- Unlabeled images
+- Images with multiple bounding boxes
+- Blank text files
+
+Additionally, images which haven't been renamed to their md5sum, it will  prompt the user to change that
+
+To use, edit hardode, changing the variable `image\_dir` to the directory you want to check.
+
