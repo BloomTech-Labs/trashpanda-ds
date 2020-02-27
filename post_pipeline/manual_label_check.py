@@ -18,6 +18,7 @@ image_dir = 'paint'
 images = []
 texts = []
 errors = []
+
 for r, d, f in os.walk(image_dir, topdown=False):
     for file in f:
         path = os.path.join(r, file)
@@ -37,12 +38,7 @@ lonely_images = set(images_basenames) - set(texts_basenames)
 unlabeled_images = [li + extensions_dict[li] for li in lonely_images]
 
 
-print(str(len(unlabeled_images))+" unlabeled images")
-for i in range(len(unlabeled_images)):
-    print(unlabeled_images[i])
-
-print()
-# Find Files with multiples lines
+# Find text files with multiples lines
 for file in os.listdir(image_dir):
     if file.endswith(".txt"):
         with open(os.path.join(image_dir, file)) as f:
@@ -53,7 +49,7 @@ for file in os.listdir(image_dir):
 
 
 
-#### find poorly named images ####
+#### helper functions for finding poorly named images ####
 def file_as_bytes(file):
     '''read image file as bytes'''
     with file:
@@ -95,13 +91,16 @@ def rename_files(fpath, unique_images):
         os.remove(fpath)                      # remove the duplicates
     
     return os.path.join(head, hash_name), os.path.join(head, hash)
+###################################################################
 
 
 
+
+# Display images that are not properly named as an md5sum
+# Prompt user to change name (both image and text file)
 
 poorly_named_images = [image for image in images
         if not re.match('^[a-f0-9]{32}$',os.path.splitext(os.path.split(image)[1])[0])]
-
 
 
 if poorly_named_images:
@@ -114,4 +113,17 @@ if poorly_named_images:
             rename_files(poor_image, images)
     else:
         print("unkown or negative response, keeping names")
+
+
+print('\n'+str(len(unlabeled_images))+" unlabeled images")
+for ui in unlabeled_images:
+    print(ui)
+
+print('\n'+str(len(unlabeled_texts))+" text files without images")
+for ut in unlabeled_texts:
+    print(ut)
+
+print('\n'+str(len(errors))+" errors(unrecognized as text or image file)")
+for e in errors:
+    print(e)
 
