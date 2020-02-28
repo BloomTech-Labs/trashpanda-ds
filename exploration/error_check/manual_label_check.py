@@ -89,7 +89,6 @@ def rename_files(fpath, unique_images):
         unique_images.append(hash_name)
         # rename file as file hash + ext
         os.rename(fpath, os.path.join(head, hash_name))
-        #print(os.path.join(head, hash_name))
         print(f"IMAGE RENAME: {head} --> {hash_name}")
         try:
             os.rename(old_text_name, new_text_name)
@@ -118,7 +117,6 @@ if poorly_named_images:
     resp = input("Change all names? <y/n>")
     if resp == 'y':
         for poor_image in poorly_named_images:
-            #new_image_name, new_text_name = 
             rename_files(poor_image, images)
     else:
         print("unkown or negative response, keeping names")
@@ -151,8 +149,8 @@ def update_classes(class_file, text_paths):
                 # modify the number if necessary
                 lines = [line for line in t]
                 for i, line in enumerate(lines):
-                    #print(line.split(',')[0]) # first number
-                    #print(new_class_num)
+                    if ',' in line:
+                        line = line.replace(',', ' ')
                     if line.split(' ')[0] != new_class_num:
                         changes += 1
                         print(f"changing class label for '{text_path}' \
