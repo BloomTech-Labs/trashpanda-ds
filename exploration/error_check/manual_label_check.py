@@ -12,9 +12,16 @@ import os
 import hashlib
 import imghdr
 import re
+import select
+import sys
 
-image_dir = "temp_test"
-image_dir = 'paint'
+# Run on a specific image dir (if no arg specified, it defaults to `image`
+try:
+    image_dir = image_dir = sys.argv[1]
+except:
+    image_dir = 'images'
+
+print(f"checking directory '{image_dir}'")
 images = []
 texts = []
 errors = []
@@ -35,7 +42,9 @@ images_extensions = [os.path.splitext(image)[1] for image in images]
 extensions_dict = dict(zip(images_basenames, images_extensions))
 texts_basenames = [os.path.splitext(text)[0] for text in texts]
 lonely_images = set(images_basenames) - set(texts_basenames)
+lonely_texts = set(texts_basenames) - set(images_basenames)
 unlabeled_images = [li + extensions_dict[li] for li in lonely_images]
+unlabeled_texts = [f"{li}.txt" for li in lonely_texts]
 
 
 # Find text files with multiples lines
@@ -115,6 +124,58 @@ if poorly_named_images:
         print("unkown or negative response, keeping names")
 
 
+#### Check for textfile mislabels ######
+def update_classes(class_file, text_paths):
+    # Add check to update classes. Check is skipped if no response is given in 10 seconds
+    print(f"To check for updates in the {class_file} press enter...")
+    i, o, e = select.select( [sys.stdin], [], [], 10 )
+    if (i):
+
+        classes_dict = {} # dictionary mapping items in classes.txt to line number
+        with open(class_file,'r') as f:
+            for i, line in enumerate(f):
+                classes_dict.update({line.rstrip() : str(i)})
+
+        # Check for changes in each line of each file
+        changes = 0 # keep track of number of files changed
+        for text_path in text_paths:
+            current_class = os.path.normpath(text_path).split(os.sep)[1]
+            try:
+                new_class_num = classes_dict[current_class]
+            except KeyError: # Stops operation if a class has been deleted
+                print(f"{'-'*50}\nclass '{current_class}' doesn't exist in '{class_file}'\n manually remove or delete it from images directory and try again")
+                exit(1)
+
+            with open(text_path,'r+') as t:
+                # convert each line into a list
+                # modify the number if necessary
+                lines = [line for line in t]
+                for i, line in enumerate(lines):
+                    #print(line.split(',')[0]) # first number
+                    #print(new_class_num)
+                    if line.split(' ')[0] != new_class_num:
+                        changes += 1
+                        print(f"changing class label for '{text_path}' \
+                            \nfrom {line.split(' ')[0]} to {new_class_num}")
+                        lines[i] =  f"{new_class_num} {' '.join(line.split(' ')[1:])}"
+
+                t.seek(0) # go to zeroth byte in file, fully overwrite, truncate
+                t.write(''.join(lines))
+                t.truncate()
+
+
+        if changes > 0:
+            print(f"i\nnumber of files changes made: {changes}")
+        else: 
+            print("\nno changes made to class labels")
+    else:
+        print("No response, skipping class update")
+
+class_file = 'classes.txt'
+update_classes(class_file, texts)
+print("DONE")
+
+########### Display last errors ##############
 print('\n'+str(len(unlabeled_images))+" unlabeled images")
 for ui in unlabeled_images:
     print(ui)
