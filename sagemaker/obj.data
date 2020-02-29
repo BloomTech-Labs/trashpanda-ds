@@ -4,6 +4,6 @@ train = train.txt
 
 valid = test.txt
 
-names = classes.names
+names = data/obj.names
 
-backup = backup/
+backup = /home/ec2-user/SageMaker/trashpanda-ds/sagemaker/backup/

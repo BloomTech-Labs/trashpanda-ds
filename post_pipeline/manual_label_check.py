@@ -135,7 +135,8 @@ def update_classes(class_file, text_paths):
                 classes_dict.update({line.rstrip() : str(i)})
 
         # Check for changes in each line of each file
-        changes = 0 # keep track of number of files changed
+        file_changes = 0 # keep track of number of files changed
+        line_changes = 0 # keep track of number of lines changed
         for text_path in text_paths:
             current_class = os.path.normpath(text_path).split(os.sep)[1]
             try:
@@ -148,14 +149,20 @@ def update_classes(class_file, text_paths):
                 # convert each line into a list
                 # modify the number if necessary
                 lines = [line for line in t]
+                file_change_occurred = False
                 for i, line in enumerate(lines):
-                    if ',' in line:
+                    if ',' in line: # corrects past error (early on) if applicable
                         line = line.replace(',', ' ')
+                        file_change_occurred = True
+                        line_changes += 1
                     if line.split(' ')[0] != new_class_num:
-                        changes += 1
+                        file_change_occurred = True
+                        line_changes += 1
                         print(f"changing class label for '{text_path}' \
                             \nfrom {line.split(' ')[0]} to {new_class_num}")
                         lines[i] =  f"{new_class_num} {' '.join(line.split(' ')[1:])}"
+                if file_change_occurred: 
+                    file_changes += 1
 
                 t.seek(0) # go to zeroth byte in file, fully overwrite, truncate
                 t.write(''.join(lines))
