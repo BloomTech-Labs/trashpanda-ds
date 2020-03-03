@@ -59,6 +59,10 @@ a few lines lower, twice in the same file in the try\_classifier function, chang
 
 Once those changes occur (4 in total), `make` should run without error
 
+Set GPU=1 and CUDNN=1 to speedup on GPU
+Set CUDNN_HALF=1 to further speedup 3 x times (Mixed-precision on Tensor Cores) GPU: Volta, Xavier, Turing and higher
+Set AVX=1 and OPENMP=1 to speedup on CPU (if error occurs then set AVX=0)
+
 `cd darknet; make`
 
 
