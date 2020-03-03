@@ -60,8 +60,11 @@ a few lines lower, twice in the same file in the try\_classifier function, chang
 Once those changes occur (4 in total), `make` should run without error
 
 Set GPU=1 and CUDNN=1 to speedup on GPU
+
 Set CUDNN_HALF=1 to further speedup 3 x times (Mixed-precision on Tensor Cores) GPU: Volta, Xavier, Turing and higher
+
 Set AVX=1 and OPENMP=1 to speedup on CPU (if error occurs then set AVX=0)
+
 
 `cd darknet; make`
 
@@ -75,7 +78,7 @@ Set AVX=1 and OPENMP=1 to speedup on CPU (if error occurs then set AVX=0)
 	`wget https://pjreddie.com/media/files/darknet53.conv.74`
 
 
-
+NOTE: if you use transfer learning and continue training our pretrained model, you can now download the last weights from the S3 bucket saved-weights (file: yolo-obj_last.weights) and use them running the model, instead of `darknet53.conv.74`. 
 
 ------------------------------------------------------
 Running the model

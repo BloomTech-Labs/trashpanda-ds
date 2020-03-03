@@ -1,8 +1,10 @@
 # Naming image files
 
-## finding md5sum for each image file
+Finding md5sum for each image file
 
-## checking for duplicates
+Checking for correct image extensions
 
-## renaming image file by its respective hash + extension using *md5sum* and removing duplicates
+Checking for duplicates
+
+Renaming image file by its respective hash + extension using *md5sum* and removing duplicates
 
