@@ -29,7 +29,7 @@ dirs = sorted(dirs)
 for png_path in png_filepaths:
     print(png_path)
     class_label = png_path.split('/')[-2] 
-    class_label_number = str(class_labels.index(class_label) + 1) # yolo counts from 1
+    class_label_number = str(class_labels.index(class_label)) # yolo counts from 0
     coordinates = find_yolo_coordinates(png_path)
     coordinates = [str(coordinate) for coordinate in coordinates]
     line = ','.join([class_label_number] +  coordinates)

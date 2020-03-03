@@ -10,7 +10,7 @@ https://github.com/AlexeyAB/darknet
 
 `git clone https://github.com/AlexeyAB/darknet.git`
 
-2. download s3 bucket into sagemaker within darknet (takes about 10 minutes for 20 Gb)
+2. download S3 bucket into sagemaker within darknet (this can take a little while as our dataset is now 15GB)
 
 `cd darknet; aws s3 sync s3://the-trash-panda dataset`
 

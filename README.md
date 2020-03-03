@@ -1,95 +1,54 @@
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline. Feel free to add your own flare to it.
-
-🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
-
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric.  Contributing to docs does NOT count as a PR to meet your weekly requirements.
-
 # The Trash Panda
 
 You can find the project at [The Trash Panda](https://www.thetrashpanda.com).
 
-## 5️⃣ Contributors
-
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
+## Contributors
 
 |                                              [Timothy Hsu](https://github.com/TimTree)                                               |                                          [Tobias Reaper](https://github.com/tobiasfyi)                                          |                                              [Trevor Clack](https://github.com/tclack88)                                              |                                             [Vera Mendes](https://github.com/VeraMendes)                                             |
 | :----------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------: |
 |         [<img src="https://avatars2.githubusercontent.com/u/7098478?s=460&v=4" width = "200" />](https://github.com/TimTree)         |    [<img src="https://avatars0.githubusercontent.com/u/45893143?s=400&v=4" width = "200" />](https://github.com/tobias-fyi)     |        [<img src="https://avatars3.githubusercontent.com/u/39845330?s=460&v=4" width = "200" />](https://github.com/tclack88)         |       [<img src="https://avatars0.githubusercontent.com/u/54785435?s=460&v=4" width = "200" />](https://github.com/VeraMendes)       |
-|                         [<img src="https://github.com/favicon.ico" width="15">](https://github.com/TimTree)                          |                      [<img src="https://github.com/favicon.ico" width="15">](https://github.com/tobiasfyi)                      |                         [<img src="https://github.com/favicon.ico" width="15">](https://github.com/tclack88)                          |                        [<img src="https://github.com/favicon.ico" width="15">](https://github.com/VeraMendes)                        |
+|                         [<img src="https://github.com/favicon.ico" width="15">](https://github.com/TimTree)                          |                      [<img src="https://github.com/favicon.ico" width="15">](https://github.com/tobias-fyi)                      |                         [<img src="https://github.com/favicon.ico" width="15">](https://github.com/tclack88)                          |                        [<img src="https://github.com/favicon.ico" width="15">](https://github.com/VeraMendes)                        |
 | [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/in/timothy-hsu-72877a171/) | [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/in/tobias-ea-reaper/) | [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/in/trevor-clack-774696184/) | [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/in/vera-mendes-1b7a60191/) |
 
-🚫 5️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
-![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-
-🚫 more info on using badges [here](https://github.com/badges/shields)
 
 ## Project Overview
 
-[Trello Board](https://github.com/Lambda-School-Labs/trashpanda-ds/projects/1)
+[Trello Board](https://github.com/Lambda-School-Labs/trashpanda-ds/projects)
 
 [Product Canvas](https://www.notion.so/d2e8748fdffe4c66a0a6641582dd6b63?v=4c919ea10f204aa89cd9184d59a9e6f4)
 
-🚫 Replace lorem ipsum with a description of your project
+Trash Panda is an app that uses image recognition AI to help you recycling better. You may search through a list of categories, enter in a material to our search bar, or use your camera to scan the item and discover how to properly dispose of your material! A lot of things end up in garbage bags sent off to the landfill when they might have a better way of being disposed. With Trash Panda, you will become wiser at disposing items and be better to our planet!
+You’ll receive proper disposal information specific to your location if you live in the USA. Currently, Trashpanda provides international users with an AI result and general information about how materials can be disposed of properly, but it will not provide disposal locations for international postal codes.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-🚫  delete if front end is not applicable to your project
-
-[Deployed Front End](https://www.thetrashpanda.com)
+[Deployed Front End](https://thetrashpanda.com/intro)
 
 ### Tech Stack
 
-- Python
+- Python 3
 - ForeCut: Automated image background removal
   - [OpenCV](https://github.com/opencv/opencv)
   - [Detectron2](https://github.com/facebookresearch/detectron2)
   - [detectron2-pipeline](https://github.com/tobias-fyi/detectron2-pipeline) forked from [jagin](https://github.com/tobias-fyi/detectron2-pipeline)
+- [Mask_RCNN](https://github.com/matterport/Mask_RCNN/)
+- [YOLO: Real-Time Object Detection using Darknet](https://github.com/AlexeyAB/darknet)
+- [AWS SageMaker](https://aws.amazon.com/sagemaker/)
+- [AWS S3](https://aws.amazon.com/s3/)
+- [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/)
 
-### 2️⃣ Predictions
+### Predictions
 
-🚫 Describe your models here
+Our Neural Network Model was trained in a 15GB dataset using darknet framework. It is trained to predict ~ 75 different classes using Computer Vision.
 
-### 2️⃣ Explanatory Variables
 
--   Explanatory Variable 1
--   Explanatory Variable 2
--   Explanatory Variable 3
--   Explanatory Variable 4
--   Explanatory Variable 5
+### How to connect to the web API
 
-### Data Sources
+Check out here: [Trashpanda-be](https://github.com/Lambda-School-Labs/trashpanda-be)
 
-🚫  Add to or delete source links as needed for your project
+### How to connect to the data API
 
--   [Source 1] (🚫add link to python notebook here)
--   [Source 2] (🚫add link to python notebook here)
--   [Source 3] (🚫add link to python notebook here)
--   [Source 4] (🚫add link to python notebook here)
--   [Source 5] (🚫add link to python notebook here)
-
-### Python Notebooks
-
-🚫  Add to or delete python notebook links as needed for your project
-
-[Python Notebook 1](🚫add link to python notebook here)
-
-[Python Notebook 2](🚫add link to python notebook here)
-
-[Python Notebook 3](🚫add link to python notebook here)
-
-### 3️⃣ How to connect to the web API
-
-🚫 List directions on how to connect to the API here
-
-### 3️⃣ How to connect to the data API
-
-🚫 List directions on how to connect to the API here
+Check out here: [Trashpanda-ds-api](https://github.com/Lambda-School-Labs/trashpanda-ds-api)
 
 ## Contributing
 
@@ -130,6 +89,6 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 ## Documentation
 
-See [Backend Documentation](_link to your backend readme here_) for details on the backend of our project.
+See [Backend Documentation](https://github.com/Lambda-School-Labs/trashpanda-be) for details on the backend of our project.
 
-See [Front End Documentation](_link to your front end readme here_) for details on the front end of our project.
+See [Front End Documentation](https://github.com/Lambda-School-Labs/trashpanda-fe) for details on the front end of our project.

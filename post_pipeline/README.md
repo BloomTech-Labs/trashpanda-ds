@@ -11,9 +11,9 @@ Checks your images after manual labeling for:
 - Unlabeled images
 - Images with multiple bounding boxes
 - Blank text files
-- Checks for mislabeled class categories in .txt files and changes them
+- Mislabeled class categories in .txt files and changes them
 
 Additionally, images which haven't been renamed to their md5sum, it will  prompt the user to opt-in to allow for the renaming
 
-To use, edit hardode, changing the variable `image\_dir` to the directory you want to check.
+To use, edit hardcode, changing the variable `image\_dir` to the directory you want to check.
 

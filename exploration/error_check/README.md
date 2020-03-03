@@ -10,7 +10,7 @@ Can be implemented after new image files are downloaded (after resizing if appli
 
 `trevor_transform.sh`
 
-A shell script used to correct an error in a previous iteration (where yolo coordinates were mistakenly comma separated instead of space separated). This shell script works on Linux and Mac on a folder called 'images' and changes all commas to spaces in .txt files. Included here for historical purposes I guess
+A shell script used to correct an error in a previous iteration (where yolo coordinates were mistakenly comma separated instead of space separated). This shell script works on Linux and Mac on a folder called 'images' and changes all commas to spaces in .txt files. Included here for historical purposes.
 
 
 `manual_label_check.py`
@@ -19,9 +19,14 @@ Checks your images after manual labeling for:
 - Unlabeled images
 - Images with multiple bounding boxes
 - Blank text files
-- Checks for mislabeled class categories in .txt files and changes them
+- Mislabeled class categories in .txt files and changes them
 
 Additionally, images which haven't been renamed to their md5sum, it will  prompt the user to opt-in to allow for the renaming
 
-To use, edit hardode, changing the variable `image\_dir` to the directory you want to check.
+To use, edit hardcode, changing the variable `image\_dir` to the directory you want to check.
+
+
+`multifile_label.py`
+
+Portion of the pipeline that adds bounding boxes and makes yolo textfile labels. This file only considers the png images at this point.
 
