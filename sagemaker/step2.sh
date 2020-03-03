@@ -1,5 +1,5 @@
 #!/bin/bash
-cd darknet; make
+cd darknet; cmake
 
 python manual_label_check.py dataset
 
