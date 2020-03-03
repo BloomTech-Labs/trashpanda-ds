@@ -1,4 +1,4 @@
-# discerning images
+# Discerning images
 
 Used to discern file types. A sample directory of labeled images is provided
 

@@ -1,4 +1,4 @@
-# Finding Boorders for yolo
+# Finding Borders for YOLO
 
 `find_borders.py`
 
