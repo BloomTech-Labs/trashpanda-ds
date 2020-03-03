@@ -18,15 +18,15 @@ Automated image background removal is done via a Keras and Tensorflow implementa
 
 ## Pipeline in summary:
 
-`images` is searched for the existance of new, unlabeled data,
+`images` is searched for the existance of new, unlabeled data.
 
-Those images are resized, renamed (to their md5sum hash) and yolo labels are found
+Those images are resized, renamed (to their md5sum hash) and yolo labels are found.
 
-Any transparent images are now appended to backgrounds
+Any transparent images are now appended to backgrounds.
 
 images with opaque backgrounds: their backgrounds are removed and placed in an `output` directory as png files (blanks images if suggested by the model are removed). Yolo labels are found for these and paired with their original jpeg counterparts under `images`.
 
-Despite some cleaning up and refactoring, this is a working pipeline to process and label images from start to finish
+Despite some cleaning up and refactoring, this is a working pipeline to process and label images from start to finish.
 
 [x] TODO: add the yolo labeling back in
 
