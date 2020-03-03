@@ -21,9 +21,9 @@ Checks your images after manual labeling for:
 - Blank text files
 - Mislabeled class categories in .txt files and changes them
 
-Additionally, images which haven't been renamed to their md5sum, it will  prompt the user to opt-in to allow for the renaming
+Additionally, images which haven't been renamed to their md5sum, it will prompt the user to opt-in to allow for the renaming
 
-To use, edit hardcode, changing the variable `image\_dir` to the directory you want to check.
+To use, edit hardcode, changing the variable `image_dir` to the directory you want to check.
 
 
 `multifile_label.py`

@@ -39,7 +39,7 @@ You’ll receive proper disposal information specific to your location if you li
 
 ### Predictions
 
-Our Neural Network Model was trained in a 15GB dataset using darknet framework. It is trained to predict ~ 75 different classes using Computer Vision.
+Our Neural Network Model was trained in a 15GB dataset using darknet framework. It is trained to predict ~ 75 different classes (ex: batteries, CD cases, bicycles) using Computer Vision.
 
 
 ### How to connect to the web API
