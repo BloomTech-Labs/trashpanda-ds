@@ -30,7 +30,7 @@ Despite some cleaning up and refactoring, this is a working pipeline to process 
 
 [x] TODO: add the yolo labeling back in
 
-[ ] TODO: modularize/ refactor the pipeline
+[x] TODO: modularize/ refactor the pipeline
 
 
 ## Mask R-CNN
