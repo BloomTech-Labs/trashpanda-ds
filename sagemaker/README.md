@@ -10,7 +10,7 @@ https://github.com/AlexeyAB/darknet
 
 `git clone https://github.com/AlexeyAB/darknet.git`
 
-2. download s3 bucket into sagemaker within darknet (takes about 10 minutes for 20 Gb)
+2. download S3 bucket into sagemaker within darknet (this can take a little while as our dataset is now 15GB)
 
 `cd darknet; aws s3 sync s3://the-trash-panda dataset`
 
@@ -58,6 +58,10 @@ for(i = 0; i < l.c; ++i){
 a few lines lower, twice in the same file in the try\_classifier function, change `int i = 0` to `i = 0`, no need to redeclare `int i` outside of the for loop, it has already been declared.
 
 Once those changes occur (4 in total), `make` should run without error
+
+Set GPU=1 and CUDNN=1 to speedup on GPU
+Set CUDNN_HALF=1 to further speedup 3 x times (Mixed-precision on Tensor Cores) GPU: Volta, Xavier, Turing and higher
+Set AVX=1 and OPENMP=1 to speedup on CPU (if error occurs then set AVX=0)
 
 `cd darknet; make`
 
